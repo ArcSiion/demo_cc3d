@@ -5,6 +5,7 @@ void naive_scalar(float *A, int NX, int NY, int NZ, int T) {
 		(float (*)[NX + 2 * XSTART][NY + 2 * YSTART][NZ + 2 * ZSTART])A;
 
 	for (int t = 0; t < T; t++) {
+		Boundary_no_flux(B, t, NX, NY, NZ);
 		for (int x = XSTART; x < NX + XSTART; x++) {
 			for (int y = YSTART; y < NY + YSTART; y++) {
 				#pragma novector

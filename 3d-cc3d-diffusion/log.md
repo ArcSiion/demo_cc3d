@@ -31,7 +31,7 @@ C_next = D * neighbor_sum + (1 - lambda - 6D) * center
 ```
 
 - 当前参数为 `D = 0.1f`、`lambda = 0.0f`，因此 `center` 系数为 `0.4f`，与现有 `3d-jacobi-7p` 默认公式保持可对齐。
-
+W
 #### 做了什么
 
 - 新建 `3d-cc3d-diffusion` 目录，作为 CompuCell3D PDE diffusion kernel 的补充实验入口。
@@ -117,10 +117,10 @@ naive_scalar, NX = 16, NY = 16, NZ = 16, T = 4, checksum = 2.079554e+06, GStenci
     V0_constant_scalar       已完成
     V1_decay_scalar          可作为参数语义补充
     V2_cell_type_scalar      优先建议下一步做
-    V3_avoid_type_scalar     后续做，接近 CC3D 但会引入分支/mask
+    V3_avoid_type_scalar     后续做，接近 CC3D 但会引入分支/maskW
     V4_naive_vector          在 scalar 语义稳定后做
-V5_vectime               最后选择合适版本做
-```
+    V5_vectime               最后选择合适版本做
+    ```
 
 ### ====================================第三次更新====================================
 
@@ -183,12 +183,80 @@ naive_scalar_cell_type, NX = 16, NY = 16, NZ = 16, T = 4, checksum = 2.046478e+0
 
 #### 下一步规划
 
-- 用户先检查并修改本节“下一步规划”。
 - 如果用户确认继续按当前方向推进，第四次更新建议做以下事情：
   - 暂时仍不创建 `vectime`。
-  - 保留 `naive_scalar` 和 `naive_scalar_cell_type` 不变，继续追加新 scalar 版本。
-  - 下一步建议实现 `V3_avoid_type_scalar`，作为独立函数，例如 `naive_scalar_avoid_type`。
-  - `V3` 中增加一个 non-diffusive type，用来模拟 CC3D 中部分 cell type 不允许 diffusion 的情况。
-  - `V3` 的邻居如果属于 non-diffusive type，则不加入 neighbor sum，并减少有效邻居数。
-  - `V3` 会更接近 CC3D 真实 solver，但会引入分支；实现后再决定它是否适合进入后续 `naive_vector` 或 `vectime`。
-- 如果用户认为 `V3_avoid_type_scalar` 太复杂，也可以先跳到 `V4_naive_vector`，给当前 `V2_cell_type_scalar` 做普通空间向量化尝试。
+  - 我先汇总一下我们接下来还没有模拟的功能，但不可能全都去做，为了temporal vectorization的效果好，我们要取舍：1. secretion / uptake 2. boundaryConditionInit 3. avoid type，也就是某些邻居不参与 diffusion 4. variableDiffusionCoefficientFlag，即邻居点 diffusion coefficient 也参与计算 5. cell type 随时间变化 6. OpenMP 并行 7. SIMD / temporal vectorization
+  - 你接下来做：1.secretion / uptake我们不做，把扩散和衰减做好，我认为真实性就足够了。2.boundaryConditionInit边界条件初始化我们还是要做的，我认为这部分我们做无流出边界simple no-flux halo boundary就可以了，应该是保证化学物质不会从模拟区域边界流出去。这里我不太懂，你看着做吧，我们不做CC3D 里完整的 boundaryConditionInit，我希望对边界的处理我们有一个可解释的逻辑就行。3.当遇到不能参与diffusion的点时，我们不做跳过，而是对每个方向计算m_dir * (neighbor - center)，也就是：
+                        new =
+                            (1 - decay_center) * center
+                          + D_center * Σ_dir [ m_dir * (neighbor_dir - center) ]，m_dir = 1  表示这个邻居参与扩散
+  m_dir = 0  表示这个邻居是 avoid type，不参与扩散，也可以m_dir = 0.5   半透过，来体现不同 cell type 对扩散的阻挡程度不同。我们先做到上面这些，然后我们再看看效果。如果我的规划有错误、不合理的地方，写在第四次更新的分析部分
+
+### ====================================第四次更新====================================
+
+#### 分析
+
+- 本轮按照第三次更新后用户修改的“下一步规划”执行。
+- `secretion / uptake` 暂时不做是合理的：它们会在 diffusion 子步之间改写 field，容易破坏连续 diffusion 时间步的规则性，不利于后续 temporal vectorization。
+- `boundaryConditionInit` 选择 simple no-flux halo boundary 是合理折中：它不是 CC3D 的完整边界系统，但语义清楚，表示化学物质不会从模拟区域边界流出。
+- 对 avoid type 不采用“跳过邻居并减少邻居数”的写法，而采用方向 permeability `m_dir * (neighbor - center)`，这个抽象更适合后续向量化。
+- 当前 permeability 语义为：`m=1.0` 正常扩散，`m=0.5` 半透，`m=0.0` 阻断。
+- 这个模型是对 CC3D avoid/non-diffusive cell type 的可解释抽象，但不是 CC3D 原始代码逐行等价实现。它保留了规则 3D stencil 结构，同时加入了 cell type 对扩散通量的影响。
+
+#### 做了什么
+
+- 新增 `boundary.c`，实现 simple no-flux halo refresh。
+- 在每个 scalar 版本的每个时间步开始前刷新当前时间层的 halo。
+- 新增 cell type：
+  - `CC3D_TYPE_BLOCKED`
+  - `CC3D_TRACKED_CELL_TYPES`
+- 扩展 cell type 初始化，当前内部点包含 `Medium`、`CellA`、`CellB`、`Blocked`。
+- 新增 permeability 系数表：
+  - `Medium`: `1.0`
+  - `CellA`: `1.0`
+  - `CellB`: `0.5`
+  - `Blocked`: `0.0`
+- 新增 `naive_scalar_permeability.c`，实现 `V3_permeability_scalar`。
+- 当前程序依次运行：
+  - `naive_scalar`
+  - `naive_scalar_cell_type`
+  - `naive_scalar_permeability`
+- `naive_scalar_permeability` 使用当前点类型决定 `D_center` 和 `decay_center`，使用邻居点类型决定该方向 permeability。
+
+#### 结果
+
+- 编译命令通过：
+
+```text
+make clean && make
+```
+
+- 小规模运行命令通过：
+
+```text
+./exe-3d-cc3d-diffusion 16 16 16 4
+```
+
+- 输出结果：
+
+```text
+cell_type_counts, Medium = 2887, CellA = 512, CellB = 592, Blocked = 105
+naive_scalar, NX = 16, NY = 16, NZ = 16, T = 4, checksum = 2.076110e+06, GStencil/s = 0.287439
+naive_scalar_cell_type, NX = 16, NY = 16, NZ = 16, T = 4, checksum = 2.040889e+06, GStencil/s = 0.138847
+naive_scalar_permeability, NX = 16, NY = 16, NZ = 16, T = 4, checksum = 2.040990e+06, GStencil/s = 0.055165
+```
+
+- `naive_scalar` 的 checksum 相比第三次更新发生变化是预期行为，因为现在每个时间步都会执行 no-flux halo refresh。
+- `naive_scalar_permeability` 明显慢于 `naive_scalar_cell_type` 是预期行为，因为每个点额外读取 6 个邻居 cell type 并执行 6 个 permeability 乘法。
+
+#### 下一步规划
+
+- 用户先检查并修改本节“下一步规划”。
+- 如果用户确认继续按当前方向推进，第五次更新建议做以下事情：
+  - 暂时仍不创建 `vectime`。
+  - 先做一轮 scalar 尺寸扫描，例如 `32^3`、`64^3`、`128^3`，观察三个版本的 GStencil/s 和性能差距。
+  - 根据尺寸扫描结果决定后续向量化目标：
+    - 如果 `naive_scalar_permeability` 过慢且复杂度过高，后续先对 `naive_scalar_cell_type` 做 `naive_vector`。
+    - 如果 `naive_scalar_permeability` 性能仍可接受，再考虑给它做 vector 版本。
+  - 暂时不加入 variable diffusion coefficient 和 cell type 随时间变化；这两个特征会进一步增加复杂度，可能不利于 temporal vectorization。
+  - 建议下一步先补一个简单运行脚本，固定输入规模并记录三种 scalar 的输出，方便后续对比。

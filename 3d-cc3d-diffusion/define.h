@@ -17,10 +17,35 @@
 #define CC3D_TYPE_MEDIUM 0
 #define CC3D_TYPE_CELL_A 1
 #define CC3D_TYPE_CELL_B 2
+#define CC3D_TYPE_BLOCKED 3
+#define CC3D_TRACKED_CELL_TYPES 4
 
 typedef unsigned char cc3d_cell_type_t;
 
 #define INIT ((float)(rand() % 1024))
+
+#define Boundary_no_flux(A, t, NX, NY, NZ) do { \
+	int _cc3d_t = (t) % 2; \
+	int _cc3d_x, _cc3d_y, _cc3d_z; \
+	for (_cc3d_y = YSTART; _cc3d_y < (NY) + YSTART; _cc3d_y++) { \
+		for (_cc3d_z = ZSTART; _cc3d_z < (NZ) + ZSTART; _cc3d_z++) { \
+			(A)[_cc3d_t][0][_cc3d_y][_cc3d_z] = (A)[_cc3d_t][XSTART][_cc3d_y][_cc3d_z]; \
+			(A)[_cc3d_t][(NX) + XSTART][_cc3d_y][_cc3d_z] = (A)[_cc3d_t][(NX) + XSTART - 1][_cc3d_y][_cc3d_z]; \
+		} \
+	} \
+	for (_cc3d_x = 0; _cc3d_x < (NX) + 2 * XSTART; _cc3d_x++) { \
+		for (_cc3d_z = ZSTART; _cc3d_z < (NZ) + ZSTART; _cc3d_z++) { \
+			(A)[_cc3d_t][_cc3d_x][0][_cc3d_z] = (A)[_cc3d_t][_cc3d_x][YSTART][_cc3d_z]; \
+			(A)[_cc3d_t][_cc3d_x][(NY) + YSTART][_cc3d_z] = (A)[_cc3d_t][_cc3d_x][(NY) + YSTART - 1][_cc3d_z]; \
+		} \
+	} \
+	for (_cc3d_x = 0; _cc3d_x < (NX) + 2 * XSTART; _cc3d_x++) { \
+		for (_cc3d_y = 0; _cc3d_y < (NY) + 2 * YSTART; _cc3d_y++) { \
+			(A)[_cc3d_t][_cc3d_x][_cc3d_y][0] = (A)[_cc3d_t][_cc3d_x][_cc3d_y][ZSTART]; \
+			(A)[_cc3d_t][_cc3d_x][_cc3d_y][(NZ) + ZSTART] = (A)[_cc3d_t][_cc3d_x][_cc3d_y][(NZ) + ZSTART - 1]; \
+		} \
+	} \
+} while (0)
 
 #define Compute_scalar(A, t, x, y, z) \
 	(A)[((t) + 1) % 2][x][y][z] = \
@@ -51,11 +76,32 @@ typedef unsigned char cc3d_cell_type_t;
 			(1.0f - _cc3d_decay - 6.0f * _cc3d_diff) * _cc3d_center; \
 	} while (0)
 
+#define Compute_scalar_permeability(A, CELL_TYPE, DIFF_COEF, DECAY_COEF, PERM_COEF, t, x, y, z) \
+	do { \
+		int _cc3d_t = (t) % 2; \
+		cc3d_cell_type_t _cc3d_center_type = (CELL_TYPE)[x][y][z]; \
+		float _cc3d_center = (A)[_cc3d_t][x][y][z]; \
+		float _cc3d_flux = \
+			(PERM_COEF)[(CELL_TYPE)[(x) - 1][y][z]] * ((A)[_cc3d_t][(x) - 1][y][z] - _cc3d_center) + \
+			(PERM_COEF)[(CELL_TYPE)[(x) + 1][y][z]] * ((A)[_cc3d_t][(x) + 1][y][z] - _cc3d_center) + \
+			(PERM_COEF)[(CELL_TYPE)[x][(y) - 1][z]] * ((A)[_cc3d_t][x][(y) - 1][z] - _cc3d_center) + \
+			(PERM_COEF)[(CELL_TYPE)[x][(y) + 1][z]] * ((A)[_cc3d_t][x][(y) + 1][z] - _cc3d_center) + \
+			(PERM_COEF)[(CELL_TYPE)[x][y][(z) - 1]] * ((A)[_cc3d_t][x][y][(z) - 1] - _cc3d_center) + \
+			(PERM_COEF)[(CELL_TYPE)[x][y][(z) + 1]] * ((A)[_cc3d_t][x][y][(z) + 1] - _cc3d_center); \
+		(A)[((t) + 1) % 2][x][y][z] = \
+			(1.0f - (DECAY_COEF)[_cc3d_center_type]) * _cc3d_center + \
+			(DIFF_COEF)[_cc3d_center_type] * _cc3d_flux; \
+	} while (0)
+
 void naive_scalar(float *A, int NX, int NY, int NZ, int T);
 void naive_scalar_cell_type(float *A, cc3d_cell_type_t *cellType, const float *diffCoef, const float *decayCoef,
 							int NX, int NY, int NZ, int T);
+void naive_scalar_permeability(float *A, cc3d_cell_type_t *cellType, const float *diffCoef,
+							   const float *decayCoef, const float *permeabilityCoef,
+							   int NX, int NY, int NZ, int T);
 double checksum_result(int NX, int NY, int NZ, float (*A)[NY + 2 * YSTART][NZ + 2 * ZSTART]);
 void init_cc3d_coefficients(float *diffCoef, float *decayCoef);
+void init_cc3d_permeability(float *permeabilityCoef);
 void init_cell_type_field(int NX, int NY, int NZ,
 						  cc3d_cell_type_t (*cellType)[NY + 2 * YSTART][NZ + 2 * ZSTART],
-						  long typeCounts[3]);
+						  long typeCounts[CC3D_TRACKED_CELL_TYPES]);
