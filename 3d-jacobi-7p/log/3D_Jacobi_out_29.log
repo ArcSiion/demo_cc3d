@@ -1,0 +1,13 @@
+=== 3D Jacobi 模板计算开始 ===
+分配的核心数: 8
+Correct!	naive_scalar, NX = 256, NY = 256, NZ = 256, T = 36, GStencil/s = 0.576907
+Correct!	naive_vector, NX = 256, NY = 256, NZ = 256, T = 36, GStencil/s = 0.579302
+Correct!	vectime, NX = 256, NY = 256, NZ = 256, T = 36, GStencil/s = 0.729892
+Correct!	vectime_extra_array, NX = 256, NY = 256, NZ = 256, T = 36, GStencil/s = 0.882658
+Correct!	vectime_extra_array_unroll8, NX = 256, NY = 256, NZ = 256, T = 36, GStencil/s = 0.866577
+Correct!	vectime_transpose_boundary, NX = 256, NY = 256, NZ = 256, T = 36, GStencil/s = 0.732602
+Correct!	vectime_transpose_boundary_extra_array, NX = 256, NY = 256, NZ = 256, T = 36, GStencil/s = 0.872688
+Correct!	vectime_512, NX = 256, NY = 256, NZ = 256, T = 36, GStencil/s = 0.747287
+Correct!	vectime_512_debug, NX = 256, NY = 256, NZ = 256, T = 36, GStencil/s = 0.756999
+Correct!	vectime_extra_array_512, NX = 256, NY = 256, NZ = 256, T = 36, GStencil/s = 0.859218
+=== 计算任务结束 ===

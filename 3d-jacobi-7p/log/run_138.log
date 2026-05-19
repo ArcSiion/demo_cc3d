@@ -1,0 +1,19 @@
+=== BitLab 算力集群: 演示任务开始 ===
+作业ID: 138
+节点名: gpu01
+工作目录: /dataspace_15T/users/zhuhl/TemporalStencil/3d-jacobi-7p
+分配的 CPU 核心数: 4
+=== 开始执行 test.sh ===
+Correct!	naive_scalar, NX = 627, NY = 127, NZ = 147, T = 93, GStencil/s = 0.763021
+Correct!	naive_vector, NX = 627, NY = 127, NZ = 147, T = 93, GStencil/s = 0.773243
+Correct!	vectime, NX = 627, NY = 127, NZ = 147, T = 93, GStencil/s = 0.682527
+Correct!	vectime_extra_array, NX = 627, NY = 127, NZ = 147, T = 93, GStencil/s = 0.737683
+Correct!	vectime_extra_array_unroll8, NX = 627, NY = 127, NZ = 147, T = 93, GStencil/s = 0.712246
+Correct!	vectime_transpose_boundary, NX = 627, NY = 127, NZ = 147, T = 93, GStencil/s = 0.684937
+Correct!	vectime_transpose_boundary_extra_array, NX = 627, NY = 127, NZ = 147, T = 93, GStencil/s = 0.736363
+Correct!	vectime_512, NX = 627, NY = 127, NZ = 147, T = 93, GStencil/s = 0.735371
+Correct!	vectime_extra_array_512, NX = 627, NY = 127, NZ = 147, T = 93, GStencil/s = 0.783143
+Correct!	vectime_extra_array_unroll8_512, NX = 627, NY = 127, NZ = 147, T = 93, GStencil/s = 0.775743
+Correct!	vectime_transpose_boundary_512, NX = 627, NY = 127, NZ = 147, T = 93, GStencil/s = 0.741054
+Correct!	vectime_transpose_boundary_extra_array_512, NX = 627, NY = 127, NZ = 147, T = 93, GStencil/s = 0.779695
+=== BitLab 算力集群: 演示任务结束 ===

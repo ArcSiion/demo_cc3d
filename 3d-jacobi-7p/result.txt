@@ -1,0 +1,1411 @@
+3D Jacobi correctness test results
+Generated: 2026-05-15T17:06:15
+Output file: /data/users/zhuhl/TemporalStencil/3d-jacobi-7p/result.txt
+Scope: 3d-jacobi-7p, 3d-jacobi-7p-blocking, 3d-jacobi-27p, 3d-jacobi-27p-blocking
+Rule: a case passes only when every kernel result line starts with "Correct!", no mismatch coordinates are printed, and exit code is 0.
+
+================================================================================================
+Suite: 3d-jacobi-7p (non-blocking)
+Executable: 3d-jacobi-7p/exe-3d-jacobi-7p
+Expected result lines per run: 17
+
+------------------------------------------------------------------------------------------------
+CASE args=(4, 4, 4, 4) OMP_NUM_THREADS=1
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-7p/exe-3d-jacobi-7p 4 4 4 4
+Status: PASS
+Return code: 0
+Result lines: 17 / 17
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_scalar, NX = 4, NY = 4, NZ = 4, T = 4, GStencil/s = 0.036571
+Correct!	naive_vector, NX = 4, NY = 4, NZ = 4, T = 4, GStencil/s = 0.064000
+Correct!	vectime, NX = 4, NY = 4, NZ = 4, T = 4, GStencil/s = 0.085333
+Correct!	vectime_extra_array, NX = 4, NY = 4, NZ = 4, T = 4, GStencil/s = 0.010240
+Correct!	vectime_extra_array_unroll8, NX = 4, NY = 4, NZ = 4, T = 4, GStencil/s = 0.017067
+Correct!	vectime_transpose_boundary, NX = 4, NY = 4, NZ = 4, T = 4, GStencil/s = 0.018286
+Correct!	vectime_transpose_boundary_extra_array, NX = 4, NY = 4, NZ = 4, T = 4, GStencil/s = 0.018286
+Correct!	vectime_512, NX = 4, NY = 4, NZ = 4, T = 4, GStencil/s = 0.064000
+Correct!	vectime_512_hybrid, NX = 4, NY = 4, NZ = 4, T = 4, GStencil/s = 0.085333
+Correct!	vectime_extra_array_512, NX = 4, NY = 4, NZ = 4, T = 4, GStencil/s = 0.012800
+Correct!	vectime_extra_array_512_hybrid, NX = 4, NY = 4, NZ = 4, T = 4, GStencil/s = 0.064000
+Correct!	vectime_extra_array_unroll8_512, NX = 4, NY = 4, NZ = 4, T = 4, GStencil/s = 0.051200
+Correct!	vectime_extra_array_unroll8_512_hybrid, NX = 4, NY = 4, NZ = 4, T = 4, GStencil/s = 0.085333
+Correct!	vectime_transpose_boundary_512, NX = 4, NY = 4, NZ = 4, T = 4, GStencil/s = 0.064000
+Correct!	vectime_transpose_boundary_512_hybrid, NX = 4, NY = 4, NZ = 4, T = 4, GStencil/s = 0.128000
+Correct!	vectime_transpose_boundary_extra_array_512, NX = 4, NY = 4, NZ = 4, T = 4, GStencil/s = 0.051200
+Correct!	vectime_transpose_boundary_extra_array_512_hybrid, NX = 4, NY = 4, NZ = 4, T = 4, GStencil/s = 0.032000
+
+------------------------------------------------------------------------------------------------
+CASE args=(5, 5, 5, 4) OMP_NUM_THREADS=1
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-7p/exe-3d-jacobi-7p 5 5 5 4
+Status: PASS
+Return code: 0
+Result lines: 17 / 17
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_scalar, NX = 5, NY = 5, NZ = 5, T = 4, GStencil/s = 0.125000
+Correct!	naive_vector, NX = 5, NY = 5, NZ = 5, T = 4, GStencil/s = 0.250000
+Correct!	vectime, NX = 5, NY = 5, NZ = 5, T = 4, GStencil/s = 0.250000
+Correct!	vectime_extra_array, NX = 5, NY = 5, NZ = 5, T = 4, GStencil/s = 0.055556
+Correct!	vectime_extra_array_unroll8, NX = 5, NY = 5, NZ = 5, T = 4, GStencil/s = 0.083333
+Correct!	vectime_transpose_boundary, NX = 5, NY = 5, NZ = 5, T = 4, GStencil/s = 0.083333
+Correct!	vectime_transpose_boundary_extra_array, NX = 5, NY = 5, NZ = 5, T = 4, GStencil/s = 0.083333
+Correct!	vectime_512, NX = 5, NY = 5, NZ = 5, T = 4, GStencil/s = 0.100000
+Correct!	vectime_512_hybrid, NX = 5, NY = 5, NZ = 5, T = 4, GStencil/s = 0.250000
+Correct!	vectime_extra_array_512, NX = 5, NY = 5, NZ = 5, T = 4, GStencil/s = 0.083333
+Correct!	vectime_extra_array_512_hybrid, NX = 5, NY = 5, NZ = 5, T = 4, GStencil/s = 0.250000
+Correct!	vectime_extra_array_unroll8_512, NX = 5, NY = 5, NZ = 5, T = 4, GStencil/s = 0.250000
+Correct!	vectime_extra_array_unroll8_512_hybrid, NX = 5, NY = 5, NZ = 5, T = 4, GStencil/s = 0.250000
+Correct!	vectime_transpose_boundary_512, NX = 5, NY = 5, NZ = 5, T = 4, GStencil/s = 0.166667
+Correct!	vectime_transpose_boundary_512_hybrid, NX = 5, NY = 5, NZ = 5, T = 4, GStencil/s = 0.250000
+Correct!	vectime_transpose_boundary_extra_array_512, NX = 5, NY = 5, NZ = 5, T = 4, GStencil/s = 0.100000
+Correct!	vectime_transpose_boundary_extra_array_512_hybrid, NX = 5, NY = 5, NZ = 5, T = 4, GStencil/s = 0.125000
+
+------------------------------------------------------------------------------------------------
+CASE args=(6, 7, 5, 4) OMP_NUM_THREADS=1
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-7p/exe-3d-jacobi-7p 6 7 5 4
+Status: PASS
+Return code: 0
+Result lines: 17 / 17
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_scalar, NX = 6, NY = 7, NZ = 5, T = 4, GStencil/s = 0.070000
+Correct!	naive_vector, NX = 6, NY = 7, NZ = 5, T = 4, GStencil/s = 0.084000
+Correct!	vectime, NX = 6, NY = 7, NZ = 5, T = 4, GStencil/s = 0.093333
+Correct!	vectime_extra_array, NX = 6, NY = 7, NZ = 5, T = 4, GStencil/s = 0.028966
+Correct!	vectime_extra_array_unroll8, NX = 6, NY = 7, NZ = 5, T = 4, GStencil/s = 0.042000
+Correct!	vectime_transpose_boundary, NX = 6, NY = 7, NZ = 5, T = 4, GStencil/s = 0.044211
+Correct!	vectime_transpose_boundary_extra_array, NX = 6, NY = 7, NZ = 5, T = 4, GStencil/s = 0.044211
+Correct!	vectime_512, NX = 6, NY = 7, NZ = 5, T = 4, GStencil/s = 0.049412
+Correct!	vectime_512_hybrid, NX = 6, NY = 7, NZ = 5, T = 4, GStencil/s = 0.105000
+Correct!	vectime_extra_array_512, NX = 6, NY = 7, NZ = 5, T = 4, GStencil/s = 0.028966
+Correct!	vectime_extra_array_512_hybrid, NX = 6, NY = 7, NZ = 5, T = 4, GStencil/s = 0.105000
+Correct!	vectime_extra_array_unroll8_512, NX = 6, NY = 7, NZ = 5, T = 4, GStencil/s = 0.084000
+Correct!	vectime_extra_array_unroll8_512_hybrid, NX = 6, NY = 7, NZ = 5, T = 4, GStencil/s = 0.120000
+Correct!	vectime_transpose_boundary_512, NX = 6, NY = 7, NZ = 5, T = 4, GStencil/s = 0.084000
+Correct!	vectime_transpose_boundary_512_hybrid, NX = 6, NY = 7, NZ = 5, T = 4, GStencil/s = 0.105000
+Correct!	vectime_transpose_boundary_extra_array_512, NX = 6, NY = 7, NZ = 5, T = 4, GStencil/s = 0.056000
+Correct!	vectime_transpose_boundary_extra_array_512_hybrid, NX = 6, NY = 7, NZ = 5, T = 4, GStencil/s = 0.105000
+
+------------------------------------------------------------------------------------------------
+CASE args=(7, 4, 9, 4) OMP_NUM_THREADS=1
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-7p/exe-3d-jacobi-7p 7 4 9 4
+Status: PASS
+Return code: 0
+Result lines: 17 / 17
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_scalar, NX = 7, NY = 4, NZ = 9, T = 4, GStencil/s = 0.201600
+Correct!	naive_vector, NX = 7, NY = 4, NZ = 9, T = 4, GStencil/s = 0.336000
+Correct!	vectime, NX = 7, NY = 4, NZ = 9, T = 4, GStencil/s = 0.168000
+Correct!	vectime_extra_array, NX = 7, NY = 4, NZ = 9, T = 4, GStencil/s = 0.084000
+Correct!	vectime_extra_array_unroll8, NX = 7, NY = 4, NZ = 9, T = 4, GStencil/s = 0.100800
+Correct!	vectime_transpose_boundary, NX = 7, NY = 4, NZ = 9, T = 4, GStencil/s = 0.072000
+Correct!	vectime_transpose_boundary_extra_array, NX = 7, NY = 4, NZ = 9, T = 4, GStencil/s = 0.112000
+Correct!	vectime_512, NX = 7, NY = 4, NZ = 9, T = 4, GStencil/s = 0.144000
+Correct!	vectime_512_hybrid, NX = 7, NY = 4, NZ = 9, T = 4, GStencil/s = 0.504000
+Correct!	vectime_extra_array_512, NX = 7, NY = 4, NZ = 9, T = 4, GStencil/s = 0.252000
+Correct!	vectime_extra_array_512_hybrid, NX = 7, NY = 4, NZ = 9, T = 4, GStencil/s = 0.504000
+Correct!	vectime_extra_array_unroll8_512, NX = 7, NY = 4, NZ = 9, T = 4, GStencil/s = 0.336000
+Correct!	vectime_extra_array_unroll8_512_hybrid, NX = 7, NY = 4, NZ = 9, T = 4, GStencil/s = 0.336000
+Correct!	vectime_transpose_boundary_512, NX = 7, NY = 4, NZ = 9, T = 4, GStencil/s = 0.336000
+Correct!	vectime_transpose_boundary_512_hybrid, NX = 7, NY = 4, NZ = 9, T = 4, GStencil/s = 0.504000
+Correct!	vectime_transpose_boundary_extra_array_512, NX = 7, NY = 4, NZ = 9, T = 4, GStencil/s = 0.168000
+Correct!	vectime_transpose_boundary_extra_array_512_hybrid, NX = 7, NY = 4, NZ = 9, T = 4, GStencil/s = 0.336000
+
+------------------------------------------------------------------------------------------------
+CASE args=(8, 8, 8, 8) OMP_NUM_THREADS=1
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-7p/exe-3d-jacobi-7p 8 8 8 8
+Status: PASS
+Return code: 0
+Result lines: 17 / 17
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_scalar, NX = 8, NY = 8, NZ = 8, T = 8, GStencil/s = 0.372364
+Correct!	naive_vector, NX = 8, NY = 8, NZ = 8, T = 8, GStencil/s = 0.455111
+Correct!	vectime, NX = 8, NY = 8, NZ = 8, T = 8, GStencil/s = 0.315077
+Correct!	vectime_extra_array, NX = 8, NY = 8, NZ = 8, T = 8, GStencil/s = 0.151704
+Correct!	vectime_extra_array_unroll8, NX = 8, NY = 8, NZ = 8, T = 8, GStencil/s = 0.215579
+Correct!	vectime_transpose_boundary, NX = 8, NY = 8, NZ = 8, T = 8, GStencil/s = 0.240941
+Correct!	vectime_transpose_boundary_extra_array, NX = 8, NY = 8, NZ = 8, T = 8, GStencil/s = 0.256000
+Correct!	vectime_512, NX = 8, NY = 8, NZ = 8, T = 8, GStencil/s = 0.455111
+Correct!	vectime_512_hybrid, NX = 8, NY = 8, NZ = 8, T = 8, GStencil/s = 0.455111
+Correct!	vectime_extra_array_512, NX = 8, NY = 8, NZ = 8, T = 8, GStencil/s = 0.455111
+Correct!	vectime_extra_array_512_hybrid, NX = 8, NY = 8, NZ = 8, T = 8, GStencil/s = 0.455111
+Correct!	vectime_extra_array_unroll8_512, NX = 8, NY = 8, NZ = 8, T = 8, GStencil/s = 0.455111
+Correct!	vectime_extra_array_unroll8_512_hybrid, NX = 8, NY = 8, NZ = 8, T = 8, GStencil/s = 0.455111
+Correct!	vectime_transpose_boundary_512, NX = 8, NY = 8, NZ = 8, T = 8, GStencil/s = 0.455111
+Correct!	vectime_transpose_boundary_512_hybrid, NX = 8, NY = 8, NZ = 8, T = 8, GStencil/s = 0.455111
+Correct!	vectime_transpose_boundary_extra_array_512, NX = 8, NY = 8, NZ = 8, T = 8, GStencil/s = 0.455111
+Correct!	vectime_transpose_boundary_extra_array_512_hybrid, NX = 8, NY = 8, NZ = 8, T = 8, GStencil/s = 0.372364
+
+------------------------------------------------------------------------------------------------
+CASE args=(9, 10, 11, 8) OMP_NUM_THREADS=1
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-7p/exe-3d-jacobi-7p 9 10 11 8
+Status: PASS
+Return code: 0
+Result lines: 17 / 17
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_scalar, NX = 9, NY = 10, NZ = 11, T = 8, GStencil/s = 0.360000
+Correct!	naive_vector, NX = 9, NY = 10, NZ = 11, T = 8, GStencil/s = 0.396000
+Correct!	vectime, NX = 9, NY = 10, NZ = 11, T = 8, GStencil/s = 0.330000
+Correct!	vectime_extra_array, NX = 9, NY = 10, NZ = 11, T = 8, GStencil/s = 0.193171
+Correct!	vectime_extra_array_unroll8, NX = 9, NY = 10, NZ = 11, T = 8, GStencil/s = 0.273103
+Correct!	vectime_transpose_boundary, NX = 9, NY = 10, NZ = 11, T = 8, GStencil/s = 0.293333
+Correct!	vectime_transpose_boundary_extra_array, NX = 9, NY = 10, NZ = 11, T = 8, GStencil/s = 0.293333
+Correct!	vectime_512, NX = 9, NY = 10, NZ = 11, T = 8, GStencil/s = 0.247500
+Correct!	vectime_512_hybrid, NX = 9, NY = 10, NZ = 11, T = 8, GStencil/s = 0.416842
+Correct!	vectime_extra_array_512, NX = 9, NY = 10, NZ = 11, T = 8, GStencil/s = 0.416842
+Correct!	vectime_extra_array_512_hybrid, NX = 9, NY = 10, NZ = 11, T = 8, GStencil/s = 0.416842
+Correct!	vectime_extra_array_unroll8_512, NX = 9, NY = 10, NZ = 11, T = 8, GStencil/s = 0.396000
+Correct!	vectime_extra_array_unroll8_512_hybrid, NX = 9, NY = 10, NZ = 11, T = 8, GStencil/s = 0.396000
+Correct!	vectime_transpose_boundary_512, NX = 9, NY = 10, NZ = 11, T = 8, GStencil/s = 0.396000
+Correct!	vectime_transpose_boundary_512_hybrid, NX = 9, NY = 10, NZ = 11, T = 8, GStencil/s = 0.416842
+Correct!	vectime_transpose_boundary_extra_array_512, NX = 9, NY = 10, NZ = 11, T = 8, GStencil/s = 0.396000
+Correct!	vectime_transpose_boundary_extra_array_512_hybrid, NX = 9, NY = 10, NZ = 11, T = 8, GStencil/s = 0.360000
+
+------------------------------------------------------------------------------------------------
+CASE args=(14, 12, 13, 8) OMP_NUM_THREADS=1
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-7p/exe-3d-jacobi-7p 14 12 13 8
+Status: PASS
+Return code: 0
+Result lines: 17 / 17
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_scalar, NX = 14, NY = 12, NZ = 13, T = 8, GStencil/s = 0.448000
+Correct!	naive_vector, NX = 14, NY = 12, NZ = 13, T = 8, GStencil/s = 0.472216
+Correct!	vectime, NX = 14, NY = 12, NZ = 13, T = 8, GStencil/s = 0.459789
+Correct!	vectime_extra_array, NX = 14, NY = 12, NZ = 13, T = 8, GStencil/s = 0.379826
+Correct!	vectime_extra_array_unroll8, NX = 14, NY = 12, NZ = 13, T = 8, GStencil/s = 0.406326
+Correct!	vectime_transpose_boundary, NX = 14, NY = 12, NZ = 13, T = 8, GStencil/s = 0.416000
+Correct!	vectime_transpose_boundary_extra_array, NX = 14, NY = 12, NZ = 13, T = 8, GStencil/s = 0.436800
+Correct!	vectime_512, NX = 14, NY = 12, NZ = 13, T = 8, GStencil/s = 0.416000
+Correct!	vectime_512_hybrid, NX = 14, NY = 12, NZ = 13, T = 8, GStencil/s = 0.472216
+Correct!	vectime_extra_array_512, NX = 14, NY = 12, NZ = 13, T = 8, GStencil/s = 0.472216
+Correct!	vectime_extra_array_512_hybrid, NX = 14, NY = 12, NZ = 13, T = 8, GStencil/s = 0.472216
+Correct!	vectime_extra_array_unroll8_512, NX = 14, NY = 12, NZ = 13, T = 8, GStencil/s = 0.472216
+Correct!	vectime_extra_array_unroll8_512_hybrid, NX = 14, NY = 12, NZ = 13, T = 8, GStencil/s = 0.472216
+Correct!	vectime_transpose_boundary_512, NX = 14, NY = 12, NZ = 13, T = 8, GStencil/s = 0.406326
+Correct!	vectime_transpose_boundary_512_hybrid, NX = 14, NY = 12, NZ = 13, T = 8, GStencil/s = 0.472216
+Correct!	vectime_transpose_boundary_extra_array_512, NX = 14, NY = 12, NZ = 13, T = 8, GStencil/s = 0.448000
+Correct!	vectime_transpose_boundary_extra_array_512_hybrid, NX = 14, NY = 12, NZ = 13, T = 8, GStencil/s = 0.472216
+
+------------------------------------------------------------------------------------------------
+CASE args=(15, 8, 9, 8) OMP_NUM_THREADS=1
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-7p/exe-3d-jacobi-7p 15 8 9 8
+Status: PASS
+Return code: 0
+Result lines: 17 / 17
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_scalar, NX = 15, NY = 8, NZ = 9, T = 8, GStencil/s = 0.360000
+Correct!	naive_vector, NX = 15, NY = 8, NZ = 9, T = 8, GStencil/s = 0.392727
+Correct!	vectime, NX = 15, NY = 8, NZ = 9, T = 8, GStencil/s = 0.360000
+Correct!	vectime_extra_array, NX = 15, NY = 8, NZ = 9, T = 8, GStencil/s = 0.270000
+Correct!	vectime_extra_array_unroll8, NX = 15, NY = 8, NZ = 9, T = 8, GStencil/s = 0.261818
+Correct!	vectime_transpose_boundary, NX = 15, NY = 8, NZ = 9, T = 8, GStencil/s = 0.308571
+Correct!	vectime_transpose_boundary_extra_array, NX = 15, NY = 8, NZ = 9, T = 8, GStencil/s = 0.360000
+Correct!	vectime_512, NX = 15, NY = 8, NZ = 9, T = 8, GStencil/s = 0.288000
+Correct!	vectime_512_hybrid, NX = 15, NY = 8, NZ = 9, T = 8, GStencil/s = 0.288000
+Correct!	vectime_extra_array_512, NX = 15, NY = 8, NZ = 9, T = 8, GStencil/s = 0.308571
+Correct!	vectime_extra_array_512_hybrid, NX = 15, NY = 8, NZ = 9, T = 8, GStencil/s = 0.432000
+Correct!	vectime_extra_array_unroll8_512, NX = 15, NY = 8, NZ = 9, T = 8, GStencil/s = 0.345600
+Correct!	vectime_extra_array_unroll8_512_hybrid, NX = 15, NY = 8, NZ = 9, T = 8, GStencil/s = 0.411429
+Correct!	vectime_transpose_boundary_512, NX = 15, NY = 8, NZ = 9, T = 8, GStencil/s = 0.345600
+Correct!	vectime_transpose_boundary_512_hybrid, NX = 15, NY = 8, NZ = 9, T = 8, GStencil/s = 0.411429
+Correct!	vectime_transpose_boundary_extra_array_512, NX = 15, NY = 8, NZ = 9, T = 8, GStencil/s = 0.240000
+Correct!	vectime_transpose_boundary_extra_array_512_hybrid, NX = 15, NY = 8, NZ = 9, T = 8, GStencil/s = 0.411429
+
+------------------------------------------------------------------------------------------------
+CASE args=(17, 9, 19, 5) OMP_NUM_THREADS=1
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-7p/exe-3d-jacobi-7p 17 9 19 5
+Status: PASS
+Return code: 0
+Result lines: 17 / 17
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_scalar, NX = 17, NY = 9, NZ = 19, T = 5, GStencil/s = 0.454219
+Correct!	naive_vector, NX = 17, NY = 9, NZ = 19, T = 5, GStencil/s = 0.468871
+Correct!	vectime, NX = 17, NY = 9, NZ = 19, T = 5, GStencil/s = 0.454219
+Correct!	vectime_extra_array, NX = 17, NY = 9, NZ = 19, T = 5, GStencil/s = 0.296633
+Correct!	vectime_extra_array_unroll8, NX = 17, NY = 9, NZ = 19, T = 5, GStencil/s = 0.415286
+Correct!	vectime_transpose_boundary, NX = 17, NY = 9, NZ = 19, T = 5, GStencil/s = 0.403750
+Correct!	vectime_transpose_boundary_extra_array, NX = 17, NY = 9, NZ = 19, T = 5, GStencil/s = 0.415286
+Correct!	vectime_512, NX = 17, NY = 9, NZ = 19, T = 5, GStencil/s = 0.468871
+Correct!	vectime_512_hybrid, NX = 17, NY = 9, NZ = 19, T = 5, GStencil/s = 0.484500
+Correct!	vectime_extra_array_512, NX = 17, NY = 9, NZ = 19, T = 5, GStencil/s = 0.427500
+Correct!	vectime_extra_array_512_hybrid, NX = 17, NY = 9, NZ = 19, T = 5, GStencil/s = 0.501207
+Correct!	vectime_extra_array_unroll8_512, NX = 17, NY = 9, NZ = 19, T = 5, GStencil/s = 0.468871
+Correct!	vectime_extra_array_unroll8_512_hybrid, NX = 17, NY = 9, NZ = 19, T = 5, GStencil/s = 0.484500
+Correct!	vectime_transpose_boundary_512, NX = 17, NY = 9, NZ = 19, T = 5, GStencil/s = 0.468871
+Correct!	vectime_transpose_boundary_512_hybrid, NX = 17, NY = 9, NZ = 19, T = 5, GStencil/s = 0.501207
+Correct!	vectime_transpose_boundary_extra_array_512, NX = 17, NY = 9, NZ = 19, T = 5, GStencil/s = 0.454219
+Correct!	vectime_transpose_boundary_extra_array_512_hybrid, NX = 17, NY = 9, NZ = 19, T = 5, GStencil/s = 0.372692
+
+------------------------------------------------------------------------------------------------
+CASE args=(31, 13, 11, 5) OMP_NUM_THREADS=1
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-7p/exe-3d-jacobi-7p 31 13 11 5
+Status: PASS
+Return code: 0
+Result lines: 17 / 17
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_scalar, NX = 31, NY = 13, NZ = 11, T = 5, GStencil/s = 0.382155
+Correct!	naive_vector, NX = 31, NY = 13, NZ = 11, T = 5, GStencil/s = 0.395804
+Correct!	vectime, NX = 31, NY = 13, NZ = 11, T = 5, GStencil/s = 0.395804
+Correct!	vectime_extra_array, NX = 31, NY = 13, NZ = 11, T = 5, GStencil/s = 0.325956
+Correct!	vectime_extra_array_unroll8, NX = 31, NY = 13, NZ = 11, T = 5, GStencil/s = 0.403000
+Correct!	vectime_transpose_boundary, NX = 31, NY = 13, NZ = 11, T = 5, GStencil/s = 0.382155
+Correct!	vectime_transpose_boundary_extra_array, NX = 31, NY = 13, NZ = 11, T = 5, GStencil/s = 0.403000
+Correct!	vectime_512, NX = 31, NY = 13, NZ = 11, T = 5, GStencil/s = 0.395804
+Correct!	vectime_512_hybrid, NX = 31, NY = 13, NZ = 11, T = 5, GStencil/s = 0.388860
+Correct!	vectime_extra_array_512, NX = 31, NY = 13, NZ = 11, T = 5, GStencil/s = 0.375678
+Correct!	vectime_extra_array_512_hybrid, NX = 31, NY = 13, NZ = 11, T = 5, GStencil/s = 0.410463
+Correct!	vectime_extra_array_unroll8_512, NX = 31, NY = 13, NZ = 11, T = 5, GStencil/s = 0.382155
+Correct!	vectime_extra_array_unroll8_512_hybrid, NX = 31, NY = 13, NZ = 11, T = 5, GStencil/s = 0.426250
+Correct!	vectime_transpose_boundary_512, NX = 31, NY = 13, NZ = 11, T = 5, GStencil/s = 0.395804
+Correct!	vectime_transpose_boundary_512_hybrid, NX = 31, NY = 13, NZ = 11, T = 5, GStencil/s = 0.418208
+Correct!	vectime_transpose_boundary_extra_array_512, NX = 31, NY = 13, NZ = 11, T = 5, GStencil/s = 0.375678
+Correct!	vectime_transpose_boundary_extra_array_512_hybrid, NX = 31, NY = 13, NZ = 11, T = 5, GStencil/s = 0.410463
+
+------------------------------------------------------------------------------------------------
+CASE args=(48, 32, 24, 6) OMP_NUM_THREADS=1
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-7p/exe-3d-jacobi-7p 48 32 24 6
+Status: PASS
+Return code: 0
+Result lines: 17 / 17
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_scalar, NX = 48, NY = 32, NZ = 24, T = 6, GStencil/s = 0.642977
+Correct!	naive_vector, NX = 48, NY = 32, NZ = 24, T = 6, GStencil/s = 0.607648
+Correct!	vectime, NX = 48, NY = 32, NZ = 24, T = 6, GStencil/s = 0.607648
+Correct!	vectime_extra_array, NX = 48, NY = 32, NZ = 24, T = 6, GStencil/s = 0.646737
+Correct!	vectime_extra_array_unroll8, NX = 48, NY = 32, NZ = 24, T = 6, GStencil/s = 0.684780
+Correct!	vectime_transpose_boundary, NX = 48, NY = 32, NZ = 24, T = 6, GStencil/s = 0.596183
+Correct!	vectime_transpose_boundary_extra_array, NX = 48, NY = 32, NZ = 24, T = 6, GStencil/s = 0.757479
+Correct!	vectime_512, NX = 48, NY = 32, NZ = 24, T = 6, GStencil/s = 0.660251
+Correct!	vectime_512_hybrid, NX = 48, NY = 32, NZ = 24, T = 6, GStencil/s = 0.810198
+Correct!	vectime_extra_array_512, NX = 48, NY = 32, NZ = 24, T = 6, GStencil/s = 0.599415
+Correct!	vectime_extra_array_512_hybrid, NX = 48, NY = 32, NZ = 24, T = 6, GStencil/s = 0.804305
+Correct!	vectime_extra_array_unroll8_512, NX = 48, NY = 32, NZ = 24, T = 6, GStencil/s = 0.644851
+Correct!	vectime_extra_array_unroll8_512_hybrid, NX = 48, NY = 32, NZ = 24, T = 6, GStencil/s = 0.825313
+Correct!	vectime_transpose_boundary_512, NX = 48, NY = 32, NZ = 24, T = 6, GStencil/s = 0.660251
+Correct!	vectime_transpose_boundary_512_hybrid, NX = 48, NY = 32, NZ = 24, T = 6, GStencil/s = 0.828404
+Correct!	vectime_transpose_boundary_extra_array_512, NX = 48, NY = 32, NZ = 24, T = 6, GStencil/s = 0.652460
+Correct!	vectime_transpose_boundary_extra_array_512_hybrid, NX = 48, NY = 32, NZ = 24, T = 6, GStencil/s = 0.819200
+
+------------------------------------------------------------------------------------------------
+CASE args=(64, 40, 33, 5) OMP_NUM_THREADS=1
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-7p/exe-3d-jacobi-7p 64 40 33 5
+Status: PASS
+Return code: 0
+Result lines: 17 / 17
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_scalar, NX = 64, NY = 40, NZ = 33, T = 5, GStencil/s = 0.547860
+Correct!	naive_vector, NX = 64, NY = 40, NZ = 33, T = 5, GStencil/s = 0.496357
+Correct!	vectime, NX = 64, NY = 40, NZ = 33, T = 5, GStencil/s = 0.543629
+Correct!	vectime_extra_array, NX = 64, NY = 40, NZ = 33, T = 5, GStencil/s = 0.622091
+Correct!	vectime_extra_array_unroll8, NX = 64, NY = 40, NZ = 33, T = 5, GStencil/s = 0.664151
+Correct!	vectime_transpose_boundary, NX = 64, NY = 40, NZ = 33, T = 5, GStencil/s = 0.550717
+Correct!	vectime_transpose_boundary_extra_array, NX = 64, NY = 40, NZ = 33, T = 5, GStencil/s = 0.629508
+Correct!	vectime_512, NX = 64, NY = 40, NZ = 33, T = 5, GStencil/s = 0.543629
+Correct!	vectime_512_hybrid, NX = 64, NY = 40, NZ = 33, T = 5, GStencil/s = 0.631390
+Correct!	vectime_extra_array_512, NX = 64, NY = 40, NZ = 33, T = 5, GStencil/s = 0.549285
+Correct!	vectime_extra_array_512_hybrid, NX = 64, NY = 40, NZ = 33, T = 5, GStencil/s = 0.627637
+Correct!	vectime_extra_array_unroll8_512, NX = 64, NY = 40, NZ = 33, T = 5, GStencil/s = 0.579424
+Correct!	vectime_extra_array_unroll8_512_hybrid, NX = 64, NY = 40, NZ = 33, T = 5, GStencil/s = 0.640000
+Correct!	vectime_transpose_boundary_512, NX = 64, NY = 40, NZ = 33, T = 5, GStencil/s = 0.575477
+Correct!	vectime_transpose_boundary_512_hybrid, NX = 64, NY = 40, NZ = 33, T = 5, GStencil/s = 0.628571
+Correct!	vectime_transpose_boundary_extra_array_512, NX = 64, NY = 40, NZ = 33, T = 5, GStencil/s = 0.573134
+Correct!	vectime_transpose_boundary_extra_array_512_hybrid, NX = 64, NY = 40, NZ = 33, T = 5, GStencil/s = 0.628571
+
+================================================================================================
+Suite: 3d-jacobi-27p (non-blocking)
+Executable: 3d-jacobi-27p/exe-3d-jacobi-27p
+Expected result lines per run: 4
+
+------------------------------------------------------------------------------------------------
+CASE args=(4, 4, 4, 4) OMP_NUM_THREADS=1
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-27p/exe-3d-jacobi-27p 4 4 4 4
+Status: PASS
+Return code: 0
+Result lines: 4 / 4
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_scalar, NX = 4, NY = 4, NZ = 4, T = 4, GStencil/s = 0.051200
+Correct!	naive_vector, NX = 4, NY = 4, NZ = 4, T = 4, GStencil/s = 0.064000
+Correct!	vectime_transpose_boundary_extra_array, NX = 4, NY = 4, NZ = 4, T = 4, GStencil/s = 0.085333
+Correct!	vectime_transpose_boundary_extra_array_512, NX = 4, NY = 4, NZ = 4, T = 4, GStencil/s = 0.036571
+
+------------------------------------------------------------------------------------------------
+CASE args=(5, 5, 5, 4) OMP_NUM_THREADS=1
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-27p/exe-3d-jacobi-27p 5 5 5 4
+Status: PASS
+Return code: 0
+Result lines: 4 / 4
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_scalar, NX = 5, NY = 5, NZ = 5, T = 4, GStencil/s = 0.050000
+Correct!	naive_vector, NX = 5, NY = 5, NZ = 5, T = 4, GStencil/s = 0.083333
+Correct!	vectime_transpose_boundary_extra_array, NX = 5, NY = 5, NZ = 5, T = 4, GStencil/s = 0.083333
+Correct!	vectime_transpose_boundary_extra_array_512, NX = 5, NY = 5, NZ = 5, T = 4, GStencil/s = 0.055556
+
+------------------------------------------------------------------------------------------------
+CASE args=(6, 7, 5, 4) OMP_NUM_THREADS=1
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-27p/exe-3d-jacobi-27p 6 7 5 4
+Status: PASS
+Return code: 0
+Result lines: 4 / 4
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_scalar, NX = 6, NY = 7, NZ = 5, T = 4, GStencil/s = 0.084000
+Correct!	naive_vector, NX = 6, NY = 7, NZ = 5, T = 4, GStencil/s = 0.093333
+Correct!	vectime_transpose_boundary_extra_array, NX = 6, NY = 7, NZ = 5, T = 4, GStencil/s = 0.093333
+Correct!	vectime_transpose_boundary_extra_array_512, NX = 6, NY = 7, NZ = 5, T = 4, GStencil/s = 0.064615
+
+------------------------------------------------------------------------------------------------
+CASE args=(7, 4, 9, 4) OMP_NUM_THREADS=1
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-27p/exe-3d-jacobi-27p 7 4 9 4
+Status: PASS
+Return code: 0
+Result lines: 4 / 4
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_scalar, NX = 7, NY = 4, NZ = 9, T = 4, GStencil/s = 0.100800
+Correct!	naive_vector, NX = 7, NY = 4, NZ = 9, T = 4, GStencil/s = 0.126000
+Correct!	vectime_transpose_boundary_extra_array, NX = 7, NY = 4, NZ = 9, T = 4, GStencil/s = 0.077538
+Correct!	vectime_transpose_boundary_extra_array_512, NX = 7, NY = 4, NZ = 9, T = 4, GStencil/s = 0.091636
+
+------------------------------------------------------------------------------------------------
+CASE args=(8, 8, 8, 8) OMP_NUM_THREADS=1
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-27p/exe-3d-jacobi-27p 8 8 8 8
+Status: PASS
+Return code: 0
+Result lines: 4 / 4
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_scalar, NX = 8, NY = 8, NZ = 8, T = 8, GStencil/s = 0.136533
+Correct!	naive_vector, NX = 8, NY = 8, NZ = 8, T = 8, GStencil/s = 0.151704
+Correct!	vectime_transpose_boundary_extra_array, NX = 8, NY = 8, NZ = 8, T = 8, GStencil/s = 0.113778
+Correct!	vectime_transpose_boundary_extra_array_512, NX = 8, NY = 8, NZ = 8, T = 8, GStencil/s = 0.157538
+
+------------------------------------------------------------------------------------------------
+CASE args=(9, 10, 11, 8) OMP_NUM_THREADS=1
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-27p/exe-3d-jacobi-27p 9 10 11 8
+Status: PASS
+Return code: 0
+Result lines: 4 / 4
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_scalar, NX = 9, NY = 10, NZ = 11, T = 8, GStencil/s = 0.134237
+Correct!	naive_vector, NX = 9, NY = 10, NZ = 11, T = 8, GStencil/s = 0.136552
+Correct!	vectime_transpose_boundary_extra_array, NX = 9, NY = 10, NZ = 11, T = 8, GStencil/s = 0.118209
+Correct!	vectime_transpose_boundary_extra_array_512, NX = 9, NY = 10, NZ = 11, T = 8, GStencil/s = 0.118209
+
+------------------------------------------------------------------------------------------------
+CASE args=(14, 12, 13, 8) OMP_NUM_THREADS=1
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-27p/exe-3d-jacobi-27p 14 12 13 8
+Status: PASS
+Return code: 0
+Result lines: 4 / 4
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_scalar, NX = 14, NY = 12, NZ = 13, T = 8, GStencil/s = 0.153263
+Correct!	naive_vector, NX = 14, NY = 12, NZ = 13, T = 8, GStencil/s = 0.146824
+Correct!	vectime_transpose_boundary_extra_array, NX = 14, NY = 12, NZ = 13, T = 8, GStencil/s = 0.169631
+Correct!	vectime_transpose_boundary_extra_array_512, NX = 14, NY = 12, NZ = 13, T = 8, GStencil/s = 0.154619
+
+------------------------------------------------------------------------------------------------
+CASE args=(15, 8, 9, 8) OMP_NUM_THREADS=1
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-27p/exe-3d-jacobi-27p 15 8 9 8
+Status: PASS
+Return code: 0
+Result lines: 4 / 4
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_scalar, NX = 15, NY = 8, NZ = 9, T = 8, GStencil/s = 0.128955
+Correct!	naive_vector, NX = 15, NY = 8, NZ = 9, T = 8, GStencil/s = 0.130909
+Correct!	vectime_transpose_boundary_extra_array, NX = 15, NY = 8, NZ = 9, T = 8, GStencil/s = 0.151579
+Correct!	vectime_transpose_boundary_extra_array_512, NX = 15, NY = 8, NZ = 9, T = 8, GStencil/s = 0.090947
+
+------------------------------------------------------------------------------------------------
+CASE args=(17, 9, 19, 5) OMP_NUM_THREADS=1
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-27p/exe-3d-jacobi-27p 17 9 19 5
+Status: PASS
+Return code: 0
+Result lines: 4 / 4
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_scalar, NX = 17, NY = 9, NZ = 19, T = 5, GStencil/s = 0.163315
+Correct!	naive_vector, NX = 17, NY = 9, NZ = 19, T = 5, GStencil/s = 0.167069
+Correct!	vectime_transpose_boundary_extra_array, NX = 17, NY = 9, NZ = 19, T = 5, GStencil/s = 0.173036
+Correct!	vectime_transpose_boundary_extra_array_512, NX = 17, NY = 9, NZ = 19, T = 5, GStencil/s = 0.157989
+
+------------------------------------------------------------------------------------------------
+CASE args=(31, 13, 11, 5) OMP_NUM_THREADS=1
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-27p/exe-3d-jacobi-27p 31 13 11 5
+Status: PASS
+Return code: 0
+Result lines: 4 / 4
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_scalar, NX = 31, NY = 13, NZ = 11, T = 5, GStencil/s = 0.133524
+Correct!	naive_vector, NX = 31, NY = 13, NZ = 11, T = 5, GStencil/s = 0.133524
+Correct!	vectime_transpose_boundary_extra_array, NX = 31, NY = 13, NZ = 11, T = 5, GStencil/s = 0.167917
+Correct!	vectime_transpose_boundary_extra_array_512, NX = 31, NY = 13, NZ = 11, T = 5, GStencil/s = 0.122459
+
+------------------------------------------------------------------------------------------------
+CASE args=(48, 32, 24, 6) OMP_NUM_THREADS=1
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-27p/exe-3d-jacobi-27p 48 32 24 6
+Status: PASS
+Return code: 0
+Result lines: 4 / 4
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_scalar, NX = 48, NY = 32, NZ = 24, T = 6, GStencil/s = 0.189046
+Correct!	naive_vector, NX = 48, NY = 32, NZ = 24, T = 6, GStencil/s = 0.183099
+Correct!	vectime_transpose_boundary_extra_array, NX = 48, NY = 32, NZ = 24, T = 6, GStencil/s = 0.238860
+Correct!	vectime_transpose_boundary_extra_array_512, NX = 48, NY = 32, NZ = 24, T = 6, GStencil/s = 0.173887
+
+------------------------------------------------------------------------------------------------
+CASE args=(64, 40, 33, 5) OMP_NUM_THREADS=1
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-27p/exe-3d-jacobi-27p 64 40 33 5
+Status: PASS
+Return code: 0
+Result lines: 4 / 4
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_scalar, NX = 64, NY = 40, NZ = 33, T = 5, GStencil/s = 0.163975
+Correct!	naive_vector, NX = 64, NY = 40, NZ = 33, T = 5, GStencil/s = 0.169231
+Correct!	vectime_transpose_boundary_extra_array, NX = 64, NY = 40, NZ = 33, T = 5, GStencil/s = 0.276259
+Correct!	vectime_transpose_boundary_extra_array_512, NX = 64, NY = 40, NZ = 33, T = 5, GStencil/s = 0.186490
+
+================================================================================================
+Suite: 3d-jacobi-7p-blocking (blocking)
+Executable: 3d-jacobi-7p-blocking/exe-3d-jacobi-7p-blocking
+Expected result lines per run: 12
+
+------------------------------------------------------------------------------------------------
+CASE args=(4, 4, 4, 4, 4, 4, 4, 1) OMP_NUM_THREADS=1
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-7p-blocking/exe-3d-jacobi-7p-blocking 4 4 4 4 4 4 4 1
+Status: PASS
+Return code: 0
+Result lines: 12 / 12
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_vec, NX = 4, NY = 4, NZ = 4, T = 4, GStencil/s = 0.042667
+Correct!	blocking_parallel_rectangle_scalar, NX = 4, NY = 4, NZ = 4, T = 4, GStencil/s = 0.010240
+Correct!	blocking_parallel_rectangle_vector, NX = 4, NY = 4, NZ = 4, T = 4, GStencil/s = 0.013474
+Correct!	blocking_parallel_rectangle_vectime, NX = 4, NY = 4, NZ = 4, T = 4, GStencil/s = 0.128000
+Correct!	blocking_parallel_rectangle_vectime_extra_array, NX = 4, NY = 4, NZ = 4, T = 4, GStencil/s = 0.028444
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8, NX = 4, NY = 4, NZ = 4, T = 4, GStencil/s = 0.032000
+Correct!	blocking_parallel_rectangle_vectime_512, NX = 4, NY = 4, NZ = 4, T = 4, GStencil/s = 0.032000
+Correct!	blocking_parallel_rectangle_vectime_512_hybrid, NX = 4, NY = 4, NZ = 4, T = 4, GStencil/s = 0.032000
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512, NX = 4, NY = 4, NZ = 4, T = 4, GStencil/s = 0.025600
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512_hybrid, NX = 4, NY = 4, NZ = 4, T = 4, GStencil/s = 0.032000
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8_512, NX = 4, NY = 4, NZ = 4, T = 4, GStencil/s = 0.032000
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8_512_hybrid, NX = 4, NY = 4, NZ = 4, T = 4, GStencil/s = 0.128000
+
+------------------------------------------------------------------------------------------------
+CASE args=(5, 5, 5, 2, 3, 2, 2, 1) OMP_NUM_THREADS=1
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-7p-blocking/exe-3d-jacobi-7p-blocking 5 5 5 2 3 2 2 1
+Status: PASS
+Return code: 0
+Result lines: 12 / 12
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_vec, NX = 5, NY = 5, NZ = 5, T = 2, GStencil/s = 0.041667
+Correct!	blocking_parallel_rectangle_scalar, NX = 5, NY = 5, NZ = 5, T = 2, GStencil/s = 0.009259
+Correct!	blocking_parallel_rectangle_vector, NX = 5, NY = 5, NZ = 5, T = 2, GStencil/s = 0.010417
+Correct!	blocking_parallel_rectangle_vectime, NX = 5, NY = 5, NZ = 5, T = 2, GStencil/s = 0.125000
+Correct!	blocking_parallel_rectangle_vectime_extra_array, NX = 5, NY = 5, NZ = 5, T = 2, GStencil/s = 0.050000
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8, NX = 5, NY = 5, NZ = 5, T = 2, GStencil/s = 0.050000
+Correct!	blocking_parallel_rectangle_vectime_512, NX = 5, NY = 5, NZ = 5, T = 2, GStencil/s = 0.041667
+Correct!	blocking_parallel_rectangle_vectime_512_hybrid, NX = 5, NY = 5, NZ = 5, T = 2, GStencil/s = 0.250000
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512, NX = 5, NY = 5, NZ = 5, T = 2, GStencil/s = 0.041667
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512_hybrid, NX = 5, NY = 5, NZ = 5, T = 2, GStencil/s = 0.041667
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8_512, NX = 5, NY = 5, NZ = 5, T = 2, GStencil/s = 0.050000
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8_512_hybrid, NX = 5, NY = 5, NZ = 5, T = 2, GStencil/s = 0.125000
+
+------------------------------------------------------------------------------------------------
+CASE args=(9, 7, 7, 3, 5, 4, 4, 2) OMP_NUM_THREADS=1
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-7p-blocking/exe-3d-jacobi-7p-blocking 9 7 7 3 5 4 4 2
+Status: PASS
+Return code: 0
+Result lines: 12 / 12
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_vec, NX = 9, NY = 7, NZ = 7, T = 3, GStencil/s = 0.132300
+Correct!	blocking_parallel_rectangle_scalar, NX = 9, NY = 7, NZ = 7, T = 3, GStencil/s = 0.030068
+Correct!	blocking_parallel_rectangle_vector, NX = 9, NY = 7, NZ = 7, T = 3, GStencil/s = 0.037800
+Correct!	blocking_parallel_rectangle_vectime, NX = 9, NY = 7, NZ = 7, T = 3, GStencil/s = 0.220500
+Correct!	blocking_parallel_rectangle_vectime_extra_array, NX = 9, NY = 7, NZ = 7, T = 3, GStencil/s = 0.132300
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8, NX = 9, NY = 7, NZ = 7, T = 3, GStencil/s = 0.132300
+Correct!	blocking_parallel_rectangle_vectime_512, NX = 9, NY = 7, NZ = 7, T = 3, GStencil/s = 0.120273
+Correct!	blocking_parallel_rectangle_vectime_512_hybrid, NX = 9, NY = 7, NZ = 7, T = 3, GStencil/s = 0.132300
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512, NX = 9, NY = 7, NZ = 7, T = 3, GStencil/s = 0.132300
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512_hybrid, NX = 9, NY = 7, NZ = 7, T = 3, GStencil/s = 0.132300
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8_512, NX = 9, NY = 7, NZ = 7, T = 3, GStencil/s = 0.132300
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8_512_hybrid, NX = 9, NY = 7, NZ = 7, T = 3, GStencil/s = 0.220500
+
+------------------------------------------------------------------------------------------------
+CASE args=(10, 9, 10, 2, 12, 8, 8, 1) OMP_NUM_THREADS=1
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-7p-blocking/exe-3d-jacobi-7p-blocking 10 9 10 2 12 8 8 1
+Status: PASS
+Return code: 0
+Result lines: 12 / 12
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_vec, NX = 10, NY = 9, NZ = 10, T = 2, GStencil/s = 0.200000
+Correct!	blocking_parallel_rectangle_scalar, NX = 10, NY = 9, NZ = 10, T = 2, GStencil/s = 0.360000
+Correct!	blocking_parallel_rectangle_vector, NX = 10, NY = 9, NZ = 10, T = 2, GStencil/s = 0.360000
+Correct!	blocking_parallel_rectangle_vectime, NX = 10, NY = 9, NZ = 10, T = 2, GStencil/s = 0.450000
+Correct!	blocking_parallel_rectangle_vectime_extra_array, NX = 10, NY = 9, NZ = 10, T = 2, GStencil/s = 0.200000
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8, NX = 10, NY = 9, NZ = 10, T = 2, GStencil/s = 0.200000
+Correct!	blocking_parallel_rectangle_vectime_512, NX = 10, NY = 9, NZ = 10, T = 2, GStencil/s = 0.225000
+Correct!	blocking_parallel_rectangle_vectime_512_hybrid, NX = 10, NY = 9, NZ = 10, T = 2, GStencil/s = 0.200000
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512, NX = 10, NY = 9, NZ = 10, T = 2, GStencil/s = 0.200000
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512_hybrid, NX = 10, NY = 9, NZ = 10, T = 2, GStencil/s = 0.225000
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8_512, NX = 10, NY = 9, NZ = 10, T = 2, GStencil/s = 0.225000
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8_512_hybrid, NX = 10, NY = 9, NZ = 10, T = 2, GStencil/s = 0.360000
+
+------------------------------------------------------------------------------------------------
+CASE args=(18, 8, 8, 8, 18, 8, 8, 1) OMP_NUM_THREADS=1
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-7p-blocking/exe-3d-jacobi-7p-blocking 18 8 8 8 18 8 8 1
+Status: PASS
+Return code: 0
+Result lines: 12 / 12
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_vec, NX = 18, NY = 8, NZ = 8, T = 8, GStencil/s = 0.354462
+Correct!	blocking_parallel_rectangle_scalar, NX = 18, NY = 8, NZ = 8, T = 8, GStencil/s = 0.137552
+Correct!	blocking_parallel_rectangle_vector, NX = 18, NY = 8, NZ = 8, T = 8, GStencil/s = 0.153600
+Correct!	blocking_parallel_rectangle_vectime, NX = 18, NY = 8, NZ = 8, T = 8, GStencil/s = 0.438857
+Correct!	blocking_parallel_rectangle_vectime_extra_array, NX = 18, NY = 8, NZ = 8, T = 8, GStencil/s = 0.354462
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8, NX = 18, NY = 8, NZ = 8, T = 8, GStencil/s = 0.368640
+Correct!	blocking_parallel_rectangle_vectime_512, NX = 18, NY = 8, NZ = 8, T = 8, GStencil/s = 0.368640
+Correct!	blocking_parallel_rectangle_vectime_512_hybrid, NX = 18, NY = 8, NZ = 8, T = 8, GStencil/s = 0.368640
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512, NX = 18, NY = 8, NZ = 8, T = 8, GStencil/s = 0.354462
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512_hybrid, NX = 18, NY = 8, NZ = 8, T = 8, GStencil/s = 0.368640
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8_512, NX = 18, NY = 8, NZ = 8, T = 8, GStencil/s = 0.354462
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8_512_hybrid, NX = 18, NY = 8, NZ = 8, T = 8, GStencil/s = 0.438857
+
+------------------------------------------------------------------------------------------------
+CASE args=(21, 8, 8, 5, 8, 8, 8, 4) OMP_NUM_THREADS=1
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-7p-blocking/exe-3d-jacobi-7p-blocking 21 8 8 5 8 8 8 4
+Status: PASS
+Return code: 0
+Result lines: 12 / 12
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_vec, NX = 21, NY = 8, NZ = 8, T = 5, GStencil/s = 0.320000
+Correct!	blocking_parallel_rectangle_scalar, NX = 21, NY = 8, NZ = 8, T = 5, GStencil/s = 0.420000
+Correct!	blocking_parallel_rectangle_vector, NX = 21, NY = 8, NZ = 8, T = 5, GStencil/s = 0.420000
+Correct!	blocking_parallel_rectangle_vectime, NX = 21, NY = 8, NZ = 8, T = 5, GStencil/s = 0.420000
+Correct!	blocking_parallel_rectangle_vectime_extra_array, NX = 21, NY = 8, NZ = 8, T = 5, GStencil/s = 0.336000
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8, NX = 21, NY = 8, NZ = 8, T = 5, GStencil/s = 0.336000
+Correct!	blocking_parallel_rectangle_vectime_512, NX = 21, NY = 8, NZ = 8, T = 5, GStencil/s = 0.336000
+Correct!	blocking_parallel_rectangle_vectime_512_hybrid, NX = 21, NY = 8, NZ = 8, T = 5, GStencil/s = 0.420000
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512, NX = 21, NY = 8, NZ = 8, T = 5, GStencil/s = 0.336000
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512_hybrid, NX = 21, NY = 8, NZ = 8, T = 5, GStencil/s = 0.336000
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8_512, NX = 21, NY = 8, NZ = 8, T = 5, GStencil/s = 0.336000
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8_512_hybrid, NX = 21, NY = 8, NZ = 8, T = 5, GStencil/s = 0.420000
+
+------------------------------------------------------------------------------------------------
+CASE args=(23, 9, 10, 2, 20, 8, 8, 2) OMP_NUM_THREADS=1
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-7p-blocking/exe-3d-jacobi-7p-blocking 23 9 10 2 20 8 8 2
+Status: PASS
+Return code: 0
+Result lines: 12 / 12
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_vec, NX = 23, NY = 9, NZ = 10, T = 2, GStencil/s = 0.318462
+Correct!	blocking_parallel_rectangle_scalar, NX = 23, NY = 9, NZ = 10, T = 2, GStencil/s = 0.118286
+Correct!	blocking_parallel_rectangle_vector, NX = 23, NY = 9, NZ = 10, T = 2, GStencil/s = 0.138000
+Correct!	blocking_parallel_rectangle_vectime, NX = 23, NY = 9, NZ = 10, T = 2, GStencil/s = 0.376364
+Correct!	blocking_parallel_rectangle_vectime_extra_array, NX = 23, NY = 9, NZ = 10, T = 2, GStencil/s = 0.276000
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8, NX = 23, NY = 9, NZ = 10, T = 2, GStencil/s = 0.295714
+Correct!	blocking_parallel_rectangle_vectime_512, NX = 23, NY = 9, NZ = 10, T = 2, GStencil/s = 0.295714
+Correct!	blocking_parallel_rectangle_vectime_512_hybrid, NX = 23, NY = 9, NZ = 10, T = 2, GStencil/s = 0.295714
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512, NX = 23, NY = 9, NZ = 10, T = 2, GStencil/s = 0.295714
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512_hybrid, NX = 23, NY = 9, NZ = 10, T = 2, GStencil/s = 0.414000
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8_512, NX = 23, NY = 9, NZ = 10, T = 2, GStencil/s = 0.276000
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8_512_hybrid, NX = 23, NY = 9, NZ = 10, T = 2, GStencil/s = 0.414000
+
+------------------------------------------------------------------------------------------------
+CASE args=(29, 10, 11, 8, 18, 8, 8, 1) OMP_NUM_THREADS=1
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-7p-blocking/exe-3d-jacobi-7p-blocking 29 10 11 8 18 8 8 1
+Status: PASS
+Return code: 0
+Result lines: 12 / 12
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_vec, NX = 29, NY = 10, NZ = 11, T = 8, GStencil/s = 0.375294
+Correct!	blocking_parallel_rectangle_scalar, NX = 29, NY = 10, NZ = 11, T = 8, GStencil/s = 0.183597
+Correct!	blocking_parallel_rectangle_vector, NX = 29, NY = 10, NZ = 11, T = 8, GStencil/s = 0.186277
+Correct!	blocking_parallel_rectangle_vectime, NX = 29, NY = 10, NZ = 11, T = 8, GStencil/s = 0.398750
+Correct!	blocking_parallel_rectangle_vectime_extra_array, NX = 29, NY = 10, NZ = 11, T = 8, GStencil/s = 0.364571
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8, NX = 29, NY = 10, NZ = 11, T = 8, GStencil/s = 0.369855
+Correct!	blocking_parallel_rectangle_vectime_512, NX = 29, NY = 10, NZ = 11, T = 8, GStencil/s = 0.369855
+Correct!	blocking_parallel_rectangle_vectime_512_hybrid, NX = 29, NY = 10, NZ = 11, T = 8, GStencil/s = 0.369855
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512, NX = 29, NY = 10, NZ = 11, T = 8, GStencil/s = 0.364571
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512_hybrid, NX = 29, NY = 10, NZ = 11, T = 8, GStencil/s = 0.340267
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8_512, NX = 29, NY = 10, NZ = 11, T = 8, GStencil/s = 0.375294
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8_512_hybrid, NX = 29, NY = 10, NZ = 11, T = 8, GStencil/s = 0.398750
+
+------------------------------------------------------------------------------------------------
+CASE args=(30, 16, 17, 2, 20, 8, 8, 4) OMP_NUM_THREADS=1
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-7p-blocking/exe-3d-jacobi-7p-blocking 30 16 17 2 20 8 8 4
+Status: PASS
+Return code: 0
+Result lines: 12 / 12
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_vec, NX = 30, NY = 16, NZ = 17, T = 2, GStencil/s = 0.418462
+Correct!	blocking_parallel_rectangle_scalar, NX = 30, NY = 16, NZ = 17, T = 2, GStencil/s = 0.171789
+Correct!	blocking_parallel_rectangle_vector, NX = 30, NY = 16, NZ = 17, T = 2, GStencil/s = 0.194286
+Correct!	blocking_parallel_rectangle_vectime, NX = 30, NY = 16, NZ = 17, T = 2, GStencil/s = 0.196627
+Correct!	blocking_parallel_rectangle_vectime_extra_array, NX = 30, NY = 16, NZ = 17, T = 2, GStencil/s = 0.171789
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8, NX = 30, NY = 16, NZ = 17, T = 2, GStencil/s = 0.175484
+Correct!	blocking_parallel_rectangle_vectime_512, NX = 30, NY = 16, NZ = 17, T = 2, GStencil/s = 0.418462
+Correct!	blocking_parallel_rectangle_vectime_512_hybrid, NX = 30, NY = 16, NZ = 17, T = 2, GStencil/s = 0.466286
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512, NX = 30, NY = 16, NZ = 17, T = 2, GStencil/s = 0.408000
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512_hybrid, NX = 30, NY = 16, NZ = 17, T = 2, GStencil/s = 0.466286
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8_512, NX = 30, NY = 16, NZ = 17, T = 2, GStencil/s = 0.418462
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8_512_hybrid, NX = 30, NY = 16, NZ = 17, T = 2, GStencil/s = 0.480000
+
+------------------------------------------------------------------------------------------------
+CASE args=(37, 13, 15, 3, 20, 8, 8, 2) OMP_NUM_THREADS=1
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-7p-blocking/exe-3d-jacobi-7p-blocking 37 13 15 3 20 8 8 2
+Status: PASS
+Return code: 0
+Result lines: 12 / 12
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_vec, NX = 37, NY = 13, NZ = 15, T = 3, GStencil/s = 0.175976
+Correct!	blocking_parallel_rectangle_scalar, NX = 37, NY = 13, NZ = 15, T = 3, GStencil/s = 0.208125
+Correct!	blocking_parallel_rectangle_vector, NX = 37, NY = 13, NZ = 15, T = 3, GStencil/s = 0.235272
+Correct!	blocking_parallel_rectangle_vectime, NX = 37, NY = 13, NZ = 15, T = 3, GStencil/s = 0.470543
+Correct!	blocking_parallel_rectangle_vectime_extra_array, NX = 37, NY = 13, NZ = 15, T = 3, GStencil/s = 0.424412
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8, NX = 37, NY = 13, NZ = 15, T = 3, GStencil/s = 0.366864
+Correct!	blocking_parallel_rectangle_vectime_512, NX = 37, NY = 13, NZ = 15, T = 3, GStencil/s = 0.432900
+Correct!	blocking_parallel_rectangle_vectime_512_hybrid, NX = 37, NY = 13, NZ = 15, T = 3, GStencil/s = 0.424412
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512, NX = 37, NY = 13, NZ = 15, T = 3, GStencil/s = 0.432900
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512_hybrid, NX = 37, NY = 13, NZ = 15, T = 3, GStencil/s = 0.424412
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8_512, NX = 37, NY = 13, NZ = 15, T = 3, GStencil/s = 0.470543
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8_512_hybrid, NX = 37, NY = 13, NZ = 15, T = 3, GStencil/s = 0.432900
+
+------------------------------------------------------------------------------------------------
+CASE args=(41, 17, 19, 4, 21, 9, 10, 2) OMP_NUM_THREADS=1
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-7p-blocking/exe-3d-jacobi-7p-blocking 41 17 19 4 21 9 10 2
+Status: PASS
+Return code: 0
+Result lines: 12 / 12
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_vec, NX = 41, NY = 17, NZ = 19, T = 4, GStencil/s = 0.287891
+Correct!	blocking_parallel_rectangle_scalar, NX = 41, NY = 17, NZ = 19, T = 4, GStencil/s = 0.222571
+Correct!	blocking_parallel_rectangle_vector, NX = 41, NY = 17, NZ = 19, T = 4, GStencil/s = 0.267535
+Correct!	blocking_parallel_rectangle_vectime, NX = 41, NY = 17, NZ = 19, T = 4, GStencil/s = 0.524475
+Correct!	blocking_parallel_rectangle_vectime_extra_array, NX = 41, NY = 17, NZ = 19, T = 4, GStencil/s = 0.472964
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8, NX = 41, NY = 17, NZ = 19, T = 4, GStencil/s = 0.495065
+Correct!	blocking_parallel_rectangle_vectime_512, NX = 41, NY = 17, NZ = 19, T = 4, GStencil/s = 0.495065
+Correct!	blocking_parallel_rectangle_vectime_512_hybrid, NX = 41, NY = 17, NZ = 19, T = 4, GStencil/s = 0.514291
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512, NX = 41, NY = 17, NZ = 19, T = 4, GStencil/s = 0.495065
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512_hybrid, NX = 41, NY = 17, NZ = 19, T = 4, GStencil/s = 0.495065
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8_512, NX = 41, NY = 17, NZ = 19, T = 4, GStencil/s = 0.499736
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8_512_hybrid, NX = 41, NY = 17, NZ = 19, T = 4, GStencil/s = 0.504495
+
+------------------------------------------------------------------------------------------------
+CASE args=(45, 18, 25, 4, 23, 11, 13, 3) OMP_NUM_THREADS=1
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-7p-blocking/exe-3d-jacobi-7p-blocking 45 18 25 4 23 11 13 3
+Status: PASS
+Return code: 0
+Result lines: 12 / 12
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_vec, NX = 45, NY = 18, NZ = 25, T = 4, GStencil/s = 0.623077
+Correct!	blocking_parallel_rectangle_scalar, NX = 45, NY = 18, NZ = 25, T = 4, GStencil/s = 0.331967
+Correct!	blocking_parallel_rectangle_vector, NX = 45, NY = 18, NZ = 25, T = 4, GStencil/s = 0.346154
+Correct!	blocking_parallel_rectangle_vectime, NX = 45, NY = 18, NZ = 25, T = 4, GStencil/s = 0.653226
+Correct!	blocking_parallel_rectangle_vectime_extra_array, NX = 45, NY = 18, NZ = 25, T = 4, GStencil/s = 0.609023
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8, NX = 45, NY = 18, NZ = 25, T = 4, GStencil/s = 0.618321
+Correct!	blocking_parallel_rectangle_vectime_512, NX = 45, NY = 18, NZ = 25, T = 4, GStencil/s = 0.632812
+Correct!	blocking_parallel_rectangle_vectime_512_hybrid, NX = 45, NY = 18, NZ = 25, T = 4, GStencil/s = 0.632812
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512, NX = 45, NY = 18, NZ = 25, T = 4, GStencil/s = 0.627907
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512_hybrid, NX = 45, NY = 18, NZ = 25, T = 4, GStencil/s = 0.632812
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8_512, NX = 45, NY = 18, NZ = 25, T = 4, GStencil/s = 0.632812
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8_512_hybrid, NX = 45, NY = 18, NZ = 25, T = 4, GStencil/s = 0.658537
+
+------------------------------------------------------------------------------------------------
+CASE args=(64, 32, 24, 4, 24, 12, 10, 2) OMP_NUM_THREADS=1
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-7p-blocking/exe-3d-jacobi-7p-blocking 64 32 24 4 24 12 10 2
+Status: PASS
+Return code: 0
+Result lines: 12 / 12
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_vec, NX = 64, NY = 32, NZ = 24, T = 4, GStencil/s = 0.578259
+Correct!	blocking_parallel_rectangle_scalar, NX = 64, NY = 32, NZ = 24, T = 4, GStencil/s = 0.271183
+Correct!	blocking_parallel_rectangle_vector, NX = 64, NY = 32, NZ = 24, T = 4, GStencil/s = 0.274209
+Correct!	blocking_parallel_rectangle_vectime, NX = 64, NY = 32, NZ = 24, T = 4, GStencil/s = 0.618264
+Correct!	blocking_parallel_rectangle_vectime_extra_array, NX = 64, NY = 32, NZ = 24, T = 4, GStencil/s = 0.610584
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8, NX = 64, NY = 32, NZ = 24, T = 4, GStencil/s = 0.606815
+Correct!	blocking_parallel_rectangle_vectime_512, NX = 64, NY = 32, NZ = 24, T = 4, GStencil/s = 0.618264
+Correct!	blocking_parallel_rectangle_vectime_512_hybrid, NX = 64, NY = 32, NZ = 24, T = 4, GStencil/s = 0.624152
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512, NX = 64, NY = 32, NZ = 24, T = 4, GStencil/s = 0.571535
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512_hybrid, NX = 64, NY = 32, NZ = 24, T = 4, GStencil/s = 0.618264
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8_512, NX = 64, NY = 32, NZ = 24, T = 4, GStencil/s = 0.612486
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8_512_hybrid, NX = 64, NY = 32, NZ = 24, T = 4, GStencil/s = 0.636272
+
+------------------------------------------------------------------------------------------------
+CASE args=(4, 4, 4, 4, 4, 4, 4, 1) OMP_NUM_THREADS=4
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-7p-blocking/exe-3d-jacobi-7p-blocking 4 4 4 4 4 4 4 1
+Status: PASS
+Return code: 0
+Result lines: 12 / 12
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_vec, NX = 4, NY = 4, NZ = 4, T = 4, GStencil/s = 0.064000
+Correct!	blocking_parallel_rectangle_scalar, NX = 4, NY = 4, NZ = 4, T = 4, GStencil/s = 0.001049
+Correct!	blocking_parallel_rectangle_vector, NX = 4, NY = 4, NZ = 4, T = 4, GStencil/s = 0.003413
+Correct!	blocking_parallel_rectangle_vectime, NX = 4, NY = 4, NZ = 4, T = 4, GStencil/s = 0.256000
+Correct!	blocking_parallel_rectangle_vectime_extra_array, NX = 4, NY = 4, NZ = 4, T = 4, GStencil/s = 0.042667
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8, NX = 4, NY = 4, NZ = 4, T = 4, GStencil/s = 0.051200
+Correct!	blocking_parallel_rectangle_vectime_512, NX = 4, NY = 4, NZ = 4, T = 4, GStencil/s = 0.051200
+Correct!	blocking_parallel_rectangle_vectime_512_hybrid, NX = 4, NY = 4, NZ = 4, T = 4, GStencil/s = 0.042667
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512, NX = 4, NY = 4, NZ = 4, T = 4, GStencil/s = 0.042667
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512_hybrid, NX = 4, NY = 4, NZ = 4, T = 4, GStencil/s = 0.128000
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8_512, NX = 4, NY = 4, NZ = 4, T = 4, GStencil/s = 0.042667
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8_512_hybrid, NX = 4, NY = 4, NZ = 4, T = 4, GStencil/s = 0.128000
+
+------------------------------------------------------------------------------------------------
+CASE args=(5, 5, 5, 2, 3, 2, 2, 1) OMP_NUM_THREADS=4
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-7p-blocking/exe-3d-jacobi-7p-blocking 5 5 5 2 3 2 2 1
+Status: PASS
+Return code: 0
+Result lines: 12 / 12
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_vec, NX = 5, NY = 5, NZ = 5, T = 2, GStencil/s = 0.035714
+Correct!	blocking_parallel_rectangle_scalar, NX = 5, NY = 5, NZ = 5, T = 2, GStencil/s = 0.000943
+Correct!	blocking_parallel_rectangle_vector, NX = 5, NY = 5, NZ = 5, T = 2, GStencil/s = 0.003205
+Correct!	blocking_parallel_rectangle_vectime, NX = 5, NY = 5, NZ = 5, T = 2, GStencil/s = 0.125000
+Correct!	blocking_parallel_rectangle_vectime_extra_array, NX = 5, NY = 5, NZ = 5, T = 2, GStencil/s = 0.041667
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8, NX = 5, NY = 5, NZ = 5, T = 2, GStencil/s = 0.050000
+Correct!	blocking_parallel_rectangle_vectime_512, NX = 5, NY = 5, NZ = 5, T = 2, GStencil/s = 0.050000
+Correct!	blocking_parallel_rectangle_vectime_512_hybrid, NX = 5, NY = 5, NZ = 5, T = 2, GStencil/s = 0.250000
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512, NX = 5, NY = 5, NZ = 5, T = 2, GStencil/s = 0.041667
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512_hybrid, NX = 5, NY = 5, NZ = 5, T = 2, GStencil/s = 0.041667
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8_512, NX = 5, NY = 5, NZ = 5, T = 2, GStencil/s = 0.050000
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8_512_hybrid, NX = 5, NY = 5, NZ = 5, T = 2, GStencil/s = 0.125000
+
+------------------------------------------------------------------------------------------------
+CASE args=(9, 7, 7, 3, 5, 4, 4, 2) OMP_NUM_THREADS=4
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-7p-blocking/exe-3d-jacobi-7p-blocking 9 7 7 3 5 4 4 2
+Status: PASS
+Return code: 0
+Result lines: 12 / 12
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_vec, NX = 9, NY = 7, NZ = 7, T = 3, GStencil/s = 0.165375
+Correct!	blocking_parallel_rectangle_scalar, NX = 9, NY = 7, NZ = 7, T = 3, GStencil/s = 0.004594
+Correct!	blocking_parallel_rectangle_vector, NX = 9, NY = 7, NZ = 7, T = 3, GStencil/s = 0.009873
+Correct!	blocking_parallel_rectangle_vectime, NX = 9, NY = 7, NZ = 7, T = 3, GStencil/s = 0.264600
+Correct!	blocking_parallel_rectangle_vectime_extra_array, NX = 9, NY = 7, NZ = 7, T = 3, GStencil/s = 0.147000
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8, NX = 9, NY = 7, NZ = 7, T = 3, GStencil/s = 0.147000
+Correct!	blocking_parallel_rectangle_vectime_512, NX = 9, NY = 7, NZ = 7, T = 3, GStencil/s = 0.132300
+Correct!	blocking_parallel_rectangle_vectime_512_hybrid, NX = 9, NY = 7, NZ = 7, T = 3, GStencil/s = 0.147000
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512, NX = 9, NY = 7, NZ = 7, T = 3, GStencil/s = 0.132300
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512_hybrid, NX = 9, NY = 7, NZ = 7, T = 3, GStencil/s = 0.264600
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8_512, NX = 9, NY = 7, NZ = 7, T = 3, GStencil/s = 0.147000
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8_512_hybrid, NX = 9, NY = 7, NZ = 7, T = 3, GStencil/s = 0.264600
+
+------------------------------------------------------------------------------------------------
+CASE args=(10, 9, 10, 2, 12, 8, 8, 1) OMP_NUM_THREADS=4
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-7p-blocking/exe-3d-jacobi-7p-blocking 10 9 10 2 12 8 8 1
+Status: PASS
+Return code: 0
+Result lines: 12 / 12
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_vec, NX = 10, NY = 9, NZ = 10, T = 2, GStencil/s = 0.200000
+Correct!	blocking_parallel_rectangle_scalar, NX = 10, NY = 9, NZ = 10, T = 2, GStencil/s = 0.360000
+Correct!	blocking_parallel_rectangle_vector, NX = 10, NY = 9, NZ = 10, T = 2, GStencil/s = 0.450000
+Correct!	blocking_parallel_rectangle_vectime, NX = 10, NY = 9, NZ = 10, T = 2, GStencil/s = 0.360000
+Correct!	blocking_parallel_rectangle_vectime_extra_array, NX = 10, NY = 9, NZ = 10, T = 2, GStencil/s = 0.200000
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8, NX = 10, NY = 9, NZ = 10, T = 2, GStencil/s = 0.225000
+Correct!	blocking_parallel_rectangle_vectime_512, NX = 10, NY = 9, NZ = 10, T = 2, GStencil/s = 0.200000
+Correct!	blocking_parallel_rectangle_vectime_512_hybrid, NX = 10, NY = 9, NZ = 10, T = 2, GStencil/s = 0.225000
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512, NX = 10, NY = 9, NZ = 10, T = 2, GStencil/s = 0.200000
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512_hybrid, NX = 10, NY = 9, NZ = 10, T = 2, GStencil/s = 0.200000
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8_512, NX = 10, NY = 9, NZ = 10, T = 2, GStencil/s = 0.200000
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8_512_hybrid, NX = 10, NY = 9, NZ = 10, T = 2, GStencil/s = 0.450000
+
+------------------------------------------------------------------------------------------------
+CASE args=(18, 8, 8, 8, 18, 8, 8, 1) OMP_NUM_THREADS=4
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-7p-blocking/exe-3d-jacobi-7p-blocking 18 8 8 8 18 8 8 1
+Status: PASS
+Return code: 0
+Result lines: 12 / 12
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_vec, NX = 18, NY = 8, NZ = 8, T = 8, GStencil/s = 0.249081
+Correct!	blocking_parallel_rectangle_scalar, NX = 18, NY = 8, NZ = 8, T = 8, GStencil/s = 0.030316
+Correct!	blocking_parallel_rectangle_vector, NX = 18, NY = 8, NZ = 8, T = 8, GStencil/s = 0.062694
+Correct!	blocking_parallel_rectangle_vectime, NX = 18, NY = 8, NZ = 8, T = 8, GStencil/s = 0.438857
+Correct!	blocking_parallel_rectangle_vectime_extra_array, NX = 18, NY = 8, NZ = 8, T = 8, GStencil/s = 0.297290
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8, NX = 18, NY = 8, NZ = 8, T = 8, GStencil/s = 0.368640
+Correct!	blocking_parallel_rectangle_vectime_512, NX = 18, NY = 8, NZ = 8, T = 8, GStencil/s = 0.368640
+Correct!	blocking_parallel_rectangle_vectime_512_hybrid, NX = 18, NY = 8, NZ = 8, T = 8, GStencil/s = 0.438857
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512, NX = 18, NY = 8, NZ = 8, T = 8, GStencil/s = 0.354462
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512_hybrid, NX = 18, NY = 8, NZ = 8, T = 8, GStencil/s = 0.438857
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8_512, NX = 18, NY = 8, NZ = 8, T = 8, GStencil/s = 0.288000
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8_512_hybrid, NX = 18, NY = 8, NZ = 8, T = 8, GStencil/s = 0.438857
+
+------------------------------------------------------------------------------------------------
+CASE args=(21, 8, 8, 5, 8, 8, 8, 4) OMP_NUM_THREADS=4
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-7p-blocking/exe-3d-jacobi-7p-blocking 21 8 8 5 8 8 8 4
+Status: PASS
+Return code: 0
+Result lines: 12 / 12
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_vec, NX = 21, NY = 8, NZ = 8, T = 5, GStencil/s = 0.353684
+Correct!	blocking_parallel_rectangle_scalar, NX = 21, NY = 8, NZ = 8, T = 5, GStencil/s = 0.420000
+Correct!	blocking_parallel_rectangle_vector, NX = 21, NY = 8, NZ = 8, T = 5, GStencil/s = 0.420000
+Correct!	blocking_parallel_rectangle_vectime, NX = 21, NY = 8, NZ = 8, T = 5, GStencil/s = 0.420000
+Correct!	blocking_parallel_rectangle_vectime_extra_array, NX = 21, NY = 8, NZ = 8, T = 5, GStencil/s = 0.336000
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8, NX = 21, NY = 8, NZ = 8, T = 5, GStencil/s = 0.336000
+Correct!	blocking_parallel_rectangle_vectime_512, NX = 21, NY = 8, NZ = 8, T = 5, GStencil/s = 0.336000
+Correct!	blocking_parallel_rectangle_vectime_512_hybrid, NX = 21, NY = 8, NZ = 8, T = 5, GStencil/s = 0.336000
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512, NX = 21, NY = 8, NZ = 8, T = 5, GStencil/s = 0.336000
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512_hybrid, NX = 21, NY = 8, NZ = 8, T = 5, GStencil/s = 0.336000
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8_512, NX = 21, NY = 8, NZ = 8, T = 5, GStencil/s = 0.336000
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8_512_hybrid, NX = 21, NY = 8, NZ = 8, T = 5, GStencil/s = 0.420000
+
+------------------------------------------------------------------------------------------------
+CASE args=(23, 9, 10, 2, 20, 8, 8, 2) OMP_NUM_THREADS=4
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-7p-blocking/exe-3d-jacobi-7p-blocking 23 9 10 2 20 8 8 2
+Status: PASS
+Return code: 0
+Result lines: 12 / 12
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_vec, NX = 23, NY = 9, NZ = 10, T = 2, GStencil/s = 0.276000
+Correct!	blocking_parallel_rectangle_scalar, NX = 23, NY = 9, NZ = 10, T = 2, GStencil/s = 0.017922
+Correct!	blocking_parallel_rectangle_vector, NX = 23, NY = 9, NZ = 10, T = 2, GStencil/s = 0.096279
+Correct!	blocking_parallel_rectangle_vectime, NX = 23, NY = 9, NZ = 10, T = 2, GStencil/s = 0.376364
+Correct!	blocking_parallel_rectangle_vectime_extra_array, NX = 23, NY = 9, NZ = 10, T = 2, GStencil/s = 0.276000
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8, NX = 23, NY = 9, NZ = 10, T = 2, GStencil/s = 0.295714
+Correct!	blocking_parallel_rectangle_vectime_512, NX = 23, NY = 9, NZ = 10, T = 2, GStencil/s = 0.295714
+Correct!	blocking_parallel_rectangle_vectime_512_hybrid, NX = 23, NY = 9, NZ = 10, T = 2, GStencil/s = 0.276000
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512, NX = 23, NY = 9, NZ = 10, T = 2, GStencil/s = 0.295714
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512_hybrid, NX = 23, NY = 9, NZ = 10, T = 2, GStencil/s = 0.276000
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8_512, NX = 23, NY = 9, NZ = 10, T = 2, GStencil/s = 0.276000
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8_512_hybrid, NX = 23, NY = 9, NZ = 10, T = 2, GStencil/s = 0.414000
+
+------------------------------------------------------------------------------------------------
+CASE args=(29, 10, 11, 8, 18, 8, 8, 1) OMP_NUM_THREADS=4
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-7p-blocking/exe-3d-jacobi-7p-blocking 29 10 11 8 18 8 8 1
+Status: PASS
+Return code: 0
+Result lines: 12 / 12
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_vec, NX = 29, NY = 10, NZ = 11, T = 8, GStencil/s = 0.369855
+Correct!	blocking_parallel_rectangle_scalar, NX = 29, NY = 10, NZ = 11, T = 8, GStencil/s = 0.057738
+Correct!	blocking_parallel_rectangle_vector, NX = 29, NY = 10, NZ = 11, T = 8, GStencil/s = 0.150118
+Correct!	blocking_parallel_rectangle_vectime, NX = 29, NY = 10, NZ = 11, T = 8, GStencil/s = 0.398750
+Correct!	blocking_parallel_rectangle_vectime_extra_array, NX = 29, NY = 10, NZ = 11, T = 8, GStencil/s = 0.369855
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8, NX = 29, NY = 10, NZ = 11, T = 8, GStencil/s = 0.369855
+Correct!	blocking_parallel_rectangle_vectime_512, NX = 29, NY = 10, NZ = 11, T = 8, GStencil/s = 0.369855
+Correct!	blocking_parallel_rectangle_vectime_512_hybrid, NX = 29, NY = 10, NZ = 11, T = 8, GStencil/s = 0.369855
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512, NX = 29, NY = 10, NZ = 11, T = 8, GStencil/s = 0.344865
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512_hybrid, NX = 29, NY = 10, NZ = 11, T = 8, GStencil/s = 0.392615
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8_512, NX = 29, NY = 10, NZ = 11, T = 8, GStencil/s = 0.369855
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8_512_hybrid, NX = 29, NY = 10, NZ = 11, T = 8, GStencil/s = 0.398750
+
+------------------------------------------------------------------------------------------------
+CASE args=(30, 16, 17, 2, 20, 8, 8, 4) OMP_NUM_THREADS=4
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-7p-blocking/exe-3d-jacobi-7p-blocking 30 16 17 2 20 8 8 4
+Status: PASS
+Return code: 0
+Result lines: 12 / 12
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_vec, NX = 30, NY = 16, NZ = 17, T = 2, GStencil/s = 0.453333
+Correct!	blocking_parallel_rectangle_scalar, NX = 30, NY = 16, NZ = 17, T = 2, GStencil/s = 0.050215
+Correct!	blocking_parallel_rectangle_vector, NX = 30, NY = 16, NZ = 17, T = 2, GStencil/s = 0.183371
+Correct!	blocking_parallel_rectangle_vectime, NX = 30, NY = 16, NZ = 17, T = 2, GStencil/s = 0.168247
+Correct!	blocking_parallel_rectangle_vectime_extra_array, NX = 30, NY = 16, NZ = 17, T = 2, GStencil/s = 0.153962
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8, NX = 30, NY = 16, NZ = 17, T = 2, GStencil/s = 0.155429
+Correct!	blocking_parallel_rectangle_vectime_512, NX = 30, NY = 16, NZ = 17, T = 2, GStencil/s = 0.466286
+Correct!	blocking_parallel_rectangle_vectime_512_hybrid, NX = 30, NY = 16, NZ = 17, T = 2, GStencil/s = 0.544000
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512, NX = 30, NY = 16, NZ = 17, T = 2, GStencil/s = 0.466286
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512_hybrid, NX = 30, NY = 16, NZ = 17, T = 2, GStencil/s = 0.480000
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8_512, NX = 30, NY = 16, NZ = 17, T = 2, GStencil/s = 0.480000
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8_512_hybrid, NX = 30, NY = 16, NZ = 17, T = 2, GStencil/s = 0.544000
+
+------------------------------------------------------------------------------------------------
+CASE args=(37, 13, 15, 3, 20, 8, 8, 2) OMP_NUM_THREADS=4
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-7p-blocking/exe-3d-jacobi-7p-blocking 37 13 15 3 20 8 8 2
+Status: PASS
+Return code: 0
+Result lines: 12 / 12
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_vec, NX = 37, NY = 13, NZ = 15, T = 3, GStencil/s = 0.178884
+Correct!	blocking_parallel_rectangle_scalar, NX = 37, NY = 13, NZ = 15, T = 3, GStencil/s = 0.052283
+Correct!	blocking_parallel_rectangle_vector, NX = 37, NY = 13, NZ = 15, T = 3, GStencil/s = 0.129611
+Correct!	blocking_parallel_rectangle_vectime, NX = 37, NY = 13, NZ = 15, T = 3, GStencil/s = 0.354836
+Correct!	blocking_parallel_rectangle_vectime_extra_array, NX = 37, NY = 13, NZ = 15, T = 3, GStencil/s = 0.360750
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8, NX = 37, NY = 13, NZ = 15, T = 3, GStencil/s = 0.366864
+Correct!	blocking_parallel_rectangle_vectime_512, NX = 37, NY = 13, NZ = 15, T = 3, GStencil/s = 0.366864
+Correct!	blocking_parallel_rectangle_vectime_512_hybrid, NX = 37, NY = 13, NZ = 15, T = 3, GStencil/s = 0.393545
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512, NX = 37, NY = 13, NZ = 15, T = 3, GStencil/s = 0.373190
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512_hybrid, NX = 37, NY = 13, NZ = 15, T = 3, GStencil/s = 0.373190
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8_512, NX = 37, NY = 13, NZ = 15, T = 3, GStencil/s = 0.343571
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8_512_hybrid, NX = 37, NY = 13, NZ = 15, T = 3, GStencil/s = 0.400833
+
+------------------------------------------------------------------------------------------------
+CASE args=(41, 17, 19, 4, 21, 9, 10, 2) OMP_NUM_THREADS=4
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-7p-blocking/exe-3d-jacobi-7p-blocking 41 17 19 4 21 9 10 2
+Status: PASS
+Return code: 0
+Result lines: 12 / 12
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_vec, NX = 41, NY = 17, NZ = 19, T = 4, GStencil/s = 0.266191
+Correct!	blocking_parallel_rectangle_scalar, NX = 41, NY = 17, NZ = 19, T = 4, GStencil/s = 0.122055
+Correct!	blocking_parallel_rectangle_vector, NX = 41, NY = 17, NZ = 19, T = 4, GStencil/s = 0.225413
+Correct!	blocking_parallel_rectangle_vectime, NX = 41, NY = 17, NZ = 19, T = 4, GStencil/s = 0.519333
+Correct!	blocking_parallel_rectangle_vectime_extra_array, NX = 41, NY = 17, NZ = 19, T = 4, GStencil/s = 0.495065
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8, NX = 41, NY = 17, NZ = 19, T = 4, GStencil/s = 0.472964
+Correct!	blocking_parallel_rectangle_vectime_512, NX = 41, NY = 17, NZ = 19, T = 4, GStencil/s = 0.495065
+Correct!	blocking_parallel_rectangle_vectime_512_hybrid, NX = 41, NY = 17, NZ = 19, T = 4, GStencil/s = 0.490481
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512, NX = 41, NY = 17, NZ = 19, T = 4, GStencil/s = 0.495065
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512_hybrid, NX = 41, NY = 17, NZ = 19, T = 4, GStencil/s = 0.495065
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8_512, NX = 41, NY = 17, NZ = 19, T = 4, GStencil/s = 0.495065
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8_512_hybrid, NX = 41, NY = 17, NZ = 19, T = 4, GStencil/s = 0.514291
+
+------------------------------------------------------------------------------------------------
+CASE args=(45, 18, 25, 4, 23, 11, 13, 3) OMP_NUM_THREADS=4
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-7p-blocking/exe-3d-jacobi-7p-blocking 45 18 25 4 23 11 13 3
+Status: PASS
+Return code: 0
+Result lines: 12 / 12
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_vec, NX = 45, NY = 18, NZ = 25, T = 4, GStencil/s = 0.310345
+Correct!	blocking_parallel_rectangle_scalar, NX = 45, NY = 18, NZ = 25, T = 4, GStencil/s = 0.125972
+Correct!	blocking_parallel_rectangle_vector, NX = 45, NY = 18, NZ = 25, T = 4, GStencil/s = 0.211488
+Correct!	blocking_parallel_rectangle_vectime, NX = 45, NY = 18, NZ = 25, T = 4, GStencil/s = 0.566434
+Correct!	blocking_parallel_rectangle_vectime_extra_array, NX = 45, NY = 18, NZ = 25, T = 4, GStencil/s = 0.554795
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8, NX = 45, NY = 18, NZ = 25, T = 4, GStencil/s = 0.558621
+Correct!	blocking_parallel_rectangle_vectime_512, NX = 45, NY = 18, NZ = 25, T = 4, GStencil/s = 0.574468
+Correct!	blocking_parallel_rectangle_vectime_512_hybrid, NX = 45, NY = 18, NZ = 25, T = 4, GStencil/s = 0.574468
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512, NX = 45, NY = 18, NZ = 25, T = 4, GStencil/s = 0.566434
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512_hybrid, NX = 45, NY = 18, NZ = 25, T = 4, GStencil/s = 0.574468
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8_512, NX = 45, NY = 18, NZ = 25, T = 4, GStencil/s = 0.574468
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8_512_hybrid, NX = 45, NY = 18, NZ = 25, T = 4, GStencil/s = 0.595588
+
+------------------------------------------------------------------------------------------------
+CASE args=(64, 32, 24, 4, 24, 12, 10, 2) OMP_NUM_THREADS=4
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-7p-blocking/exe-3d-jacobi-7p-blocking 64 32 24 4 24 12 10 2
+Status: PASS
+Return code: 0
+Result lines: 12 / 12
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_vec, NX = 64, NY = 32, NZ = 24, T = 4, GStencil/s = 0.595782
+Correct!	blocking_parallel_rectangle_scalar, NX = 64, NY = 32, NZ = 24, T = 4, GStencil/s = 0.193512
+Correct!	blocking_parallel_rectangle_vector, NX = 64, NY = 32, NZ = 24, T = 4, GStencil/s = 0.311089
+Correct!	blocking_parallel_rectangle_vectime, NX = 64, NY = 32, NZ = 24, T = 4, GStencil/s = 0.610584
+Correct!	blocking_parallel_rectangle_vectime_extra_array, NX = 64, NY = 32, NZ = 24, T = 4, GStencil/s = 0.601248
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8, NX = 64, NY = 32, NZ = 24, T = 4, GStencil/s = 0.604948
+Correct!	blocking_parallel_rectangle_vectime_512, NX = 64, NY = 32, NZ = 24, T = 4, GStencil/s = 0.618264
+Correct!	blocking_parallel_rectangle_vectime_512_hybrid, NX = 64, NY = 32, NZ = 24, T = 4, GStencil/s = 0.620215
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512, NX = 64, NY = 32, NZ = 24, T = 4, GStencil/s = 0.616326
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512_hybrid, NX = 64, NY = 32, NZ = 24, T = 4, GStencil/s = 0.610584
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8_512, NX = 64, NY = 32, NZ = 24, T = 4, GStencil/s = 0.612486
+Correct!	blocking_parallel_rectangle_vectime_extra_array_unroll8_512_hybrid, NX = 64, NY = 32, NZ = 24, T = 4, GStencil/s = 0.624152
+
+================================================================================================
+Suite: 3d-jacobi-27p-blocking (blocking)
+Executable: 3d-jacobi-27p-blocking/exe-3d-jacobi-27p-blocking
+Expected result lines per run: 5
+
+------------------------------------------------------------------------------------------------
+CASE args=(4, 4, 4, 4, 4, 4, 4, 1) OMP_NUM_THREADS=1
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-27p-blocking/exe-3d-jacobi-27p-blocking 4 4 4 4 4 4 4 1
+Status: PASS
+Return code: 0
+Result lines: 5 / 5
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_vec, NX = 4, NY = 4, NZ = 4, T = 4, GStencil/s = 0.051200
+Correct!	blocking_parallel_rectangle_scalar, NX = 4, NY = 4, NZ = 4, T = 4, GStencil/s = 0.011130
+Correct!	blocking_parallel_rectangle_vector, NX = 4, NY = 4, NZ = 4, T = 4, GStencil/s = 0.013474
+Correct!	blocking_parallel_rectangle_vectime_extra_array, NX = 4, NY = 4, NZ = 4, T = 4, GStencil/s = 0.028444
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512, NX = 4, NY = 4, NZ = 4, T = 4, GStencil/s = 0.036571
+
+------------------------------------------------------------------------------------------------
+CASE args=(5, 5, 5, 2, 3, 2, 2, 1) OMP_NUM_THREADS=1
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-27p-blocking/exe-3d-jacobi-27p-blocking 5 5 5 2 3 2 2 1
+Status: PASS
+Return code: 0
+Result lines: 5 / 5
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_vec, NX = 5, NY = 5, NZ = 5, T = 2, GStencil/s = 0.050000
+Correct!	blocking_parallel_rectangle_scalar, NX = 5, NY = 5, NZ = 5, T = 2, GStencil/s = 0.005435
+Correct!	blocking_parallel_rectangle_vector, NX = 5, NY = 5, NZ = 5, T = 2, GStencil/s = 0.010000
+Correct!	blocking_parallel_rectangle_vectime_extra_array, NX = 5, NY = 5, NZ = 5, T = 2, GStencil/s = 0.031250
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512, NX = 5, NY = 5, NZ = 5, T = 2, GStencil/s = 0.041667
+
+------------------------------------------------------------------------------------------------
+CASE args=(9, 7, 7, 3, 5, 4, 4, 2) OMP_NUM_THREADS=1
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-27p-blocking/exe-3d-jacobi-27p-blocking 9 7 7 3 5 4 4 2
+Status: PASS
+Return code: 0
+Result lines: 5 / 5
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_vec, NX = 9, NY = 7, NZ = 7, T = 3, GStencil/s = 0.094500
+Correct!	blocking_parallel_rectangle_scalar, NX = 9, NY = 7, NZ = 7, T = 3, GStencil/s = 0.027000
+Correct!	blocking_parallel_rectangle_vector, NX = 9, NY = 7, NZ = 7, T = 3, GStencil/s = 0.033075
+Correct!	blocking_parallel_rectangle_vectime_extra_array, NX = 9, NY = 7, NZ = 7, T = 3, GStencil/s = 0.077824
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512, NX = 9, NY = 7, NZ = 7, T = 3, GStencil/s = 0.066150
+
+------------------------------------------------------------------------------------------------
+CASE args=(10, 9, 10, 2, 12, 8, 8, 1) OMP_NUM_THREADS=1
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-27p-blocking/exe-3d-jacobi-27p-blocking 10 9 10 2 12 8 8 1
+Status: PASS
+Return code: 0
+Result lines: 5 / 5
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_vec, NX = 10, NY = 9, NZ = 10, T = 2, GStencil/s = 0.120000
+Correct!	blocking_parallel_rectangle_scalar, NX = 10, NY = 9, NZ = 10, T = 2, GStencil/s = 0.138462
+Correct!	blocking_parallel_rectangle_vector, NX = 10, NY = 9, NZ = 10, T = 2, GStencil/s = 0.138462
+Correct!	blocking_parallel_rectangle_vectime_extra_array, NX = 10, NY = 9, NZ = 10, T = 2, GStencil/s = 0.105882
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512, NX = 10, NY = 9, NZ = 10, T = 2, GStencil/s = 0.112500
+
+------------------------------------------------------------------------------------------------
+CASE args=(18, 8, 8, 8, 18, 8, 8, 1) OMP_NUM_THREADS=1
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-27p-blocking/exe-3d-jacobi-27p-blocking 18 8 8 8 18 8 8 1
+Status: PASS
+Return code: 0
+Result lines: 5 / 5
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_vec, NX = 18, NY = 8, NZ = 8, T = 8, GStencil/s = 0.059844
+Correct!	blocking_parallel_rectangle_scalar, NX = 18, NY = 8, NZ = 8, T = 8, GStencil/s = 0.028621
+Correct!	blocking_parallel_rectangle_vector, NX = 18, NY = 8, NZ = 8, T = 8, GStencil/s = 0.030823
+Correct!	blocking_parallel_rectangle_vectime_extra_array, NX = 18, NY = 8, NZ = 8, T = 8, GStencil/s = 0.090353
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512, NX = 18, NY = 8, NZ = 8, T = 8, GStencil/s = 0.135529
+
+------------------------------------------------------------------------------------------------
+CASE args=(21, 8, 8, 5, 8, 8, 8, 4) OMP_NUM_THREADS=1
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-27p-blocking/exe-3d-jacobi-27p-blocking 21 8 8 5 8 8 8 4
+Status: PASS
+Return code: 0
+Result lines: 5 / 5
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_vec, NX = 21, NY = 8, NZ = 8, T = 5, GStencil/s = 0.142979
+Correct!	blocking_parallel_rectangle_scalar, NX = 21, NY = 8, NZ = 8, T = 5, GStencil/s = 0.142979
+Correct!	blocking_parallel_rectangle_vector, NX = 21, NY = 8, NZ = 8, T = 5, GStencil/s = 0.142979
+Correct!	blocking_parallel_rectangle_vectime_extra_array, NX = 21, NY = 8, NZ = 8, T = 5, GStencil/s = 0.134400
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512, NX = 21, NY = 8, NZ = 8, T = 5, GStencil/s = 0.137143
+
+------------------------------------------------------------------------------------------------
+CASE args=(23, 9, 10, 2, 20, 8, 8, 2) OMP_NUM_THREADS=1
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-27p-blocking/exe-3d-jacobi-27p-blocking 23 9 10 2 20 8 8 2
+Status: PASS
+Return code: 0
+Result lines: 5 / 5
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_vec, NX = 23, NY = 9, NZ = 10, T = 2, GStencil/s = 0.133548
+Correct!	blocking_parallel_rectangle_scalar, NX = 23, NY = 9, NZ = 10, T = 2, GStencil/s = 0.067869
+Correct!	blocking_parallel_rectangle_vector, NX = 23, NY = 9, NZ = 10, T = 2, GStencil/s = 0.079615
+Correct!	blocking_parallel_rectangle_vectime_extra_array, NX = 23, NY = 9, NZ = 10, T = 2, GStencil/s = 0.125455
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512, NX = 23, NY = 9, NZ = 10, T = 2, GStencil/s = 0.125455
+
+------------------------------------------------------------------------------------------------
+CASE args=(29, 10, 11, 8, 18, 8, 8, 1) OMP_NUM_THREADS=1
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-27p-blocking/exe-3d-jacobi-27p-blocking 29 10 11 8 18 8 8 1
+Status: PASS
+Return code: 0
+Result lines: 5 / 5
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_vec, NX = 29, NY = 10, NZ = 11, T = 8, GStencil/s = 0.132228
+Correct!	blocking_parallel_rectangle_scalar, NX = 29, NY = 10, NZ = 11, T = 8, GStencil/s = 0.084503
+Correct!	blocking_parallel_rectangle_vector, NX = 29, NY = 10, NZ = 11, T = 8, GStencil/s = 0.089859
+Correct!	blocking_parallel_rectangle_vectime_extra_array, NX = 29, NY = 10, NZ = 11, T = 8, GStencil/s = 0.128241
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512, NX = 29, NY = 10, NZ = 11, T = 8, GStencil/s = 0.128889
+
+------------------------------------------------------------------------------------------------
+CASE args=(30, 16, 17, 2, 20, 8, 8, 4) OMP_NUM_THREADS=1
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-27p-blocking/exe-3d-jacobi-27p-blocking 30 16 17 2 20 8 8 4
+Status: PASS
+Return code: 0
+Result lines: 5 / 5
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_vec, NX = 30, NY = 16, NZ = 17, T = 2, GStencil/s = 0.164848
+Correct!	blocking_parallel_rectangle_scalar, NX = 30, NY = 16, NZ = 17, T = 2, GStencil/s = 0.089180
+Correct!	blocking_parallel_rectangle_vector, NX = 30, NY = 16, NZ = 17, T = 2, GStencil/s = 0.093793
+Correct!	blocking_parallel_rectangle_vectime_extra_array, NX = 30, NY = 16, NZ = 17, T = 2, GStencil/s = 0.092203
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512, NX = 30, NY = 16, NZ = 17, T = 2, GStencil/s = 0.161584
+
+------------------------------------------------------------------------------------------------
+CASE args=(37, 13, 15, 3, 20, 8, 8, 2) OMP_NUM_THREADS=1
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-27p-blocking/exe-3d-jacobi-27p-blocking 37 13 15 3 20 8 8 2
+Status: PASS
+Return code: 0
+Result lines: 5 / 5
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_vec, NX = 37, NY = 13, NZ = 15, T = 3, GStencil/s = 0.151364
+Correct!	blocking_parallel_rectangle_scalar, NX = 37, NY = 13, NZ = 15, T = 3, GStencil/s = 0.097500
+Correct!	blocking_parallel_rectangle_vector, NX = 37, NY = 13, NZ = 15, T = 3, GStencil/s = 0.101145
+Correct!	blocking_parallel_rectangle_vectime_extra_array, NX = 37, NY = 13, NZ = 15, T = 3, GStencil/s = 0.143344
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512, NX = 37, NY = 13, NZ = 15, T = 3, GStencil/s = 0.143344
+
+------------------------------------------------------------------------------------------------
+CASE args=(41, 17, 19, 4, 21, 9, 10, 2) OMP_NUM_THREADS=1
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-27p-blocking/exe-3d-jacobi-27p-blocking 41 17 19 4 21 9 10 2
+Status: PASS
+Return code: 0
+Result lines: 5 / 5
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_vec, NX = 41, NY = 17, NZ = 19, T = 4, GStencil/s = 0.160036
+Correct!	blocking_parallel_rectangle_scalar, NX = 41, NY = 17, NZ = 19, T = 4, GStencil/s = 0.105733
+Correct!	blocking_parallel_rectangle_vector, NX = 41, NY = 17, NZ = 19, T = 4, GStencil/s = 0.111755
+Correct!	blocking_parallel_rectangle_vectime_extra_array, NX = 41, NY = 17, NZ = 19, T = 4, GStencil/s = 0.167633
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512, NX = 41, NY = 17, NZ = 19, T = 4, GStencil/s = 0.166056
+
+------------------------------------------------------------------------------------------------
+CASE args=(45, 18, 25, 4, 23, 11, 13, 3) OMP_NUM_THREADS=1
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-27p-blocking/exe-3d-jacobi-27p-blocking 45 18 25 4 23 11 13 3
+Status: PASS
+Return code: 0
+Result lines: 5 / 5
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_vec, NX = 45, NY = 18, NZ = 25, T = 4, GStencil/s = 0.176856
+Correct!	blocking_parallel_rectangle_scalar, NX = 45, NY = 18, NZ = 25, T = 4, GStencil/s = 0.110656
+Correct!	blocking_parallel_rectangle_vector, NX = 45, NY = 18, NZ = 25, T = 4, GStencil/s = 0.118076
+Correct!	blocking_parallel_rectangle_vectime_extra_array, NX = 45, NY = 18, NZ = 25, T = 4, GStencil/s = 0.171610
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512, NX = 45, NY = 18, NZ = 25, T = 4, GStencil/s = 0.171975
+
+------------------------------------------------------------------------------------------------
+CASE args=(64, 32, 24, 4, 24, 12, 10, 2) OMP_NUM_THREADS=1
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-27p-blocking/exe-3d-jacobi-27p-blocking 64 32 24 4 24 12 10 2
+Status: PASS
+Return code: 0
+Result lines: 5 / 5
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_vec, NX = 64, NY = 32, NZ = 24, T = 4, GStencil/s = 0.181206
+Correct!	blocking_parallel_rectangle_scalar, NX = 64, NY = 32, NZ = 24, T = 4, GStencil/s = 0.103751
+Correct!	blocking_parallel_rectangle_vector, NX = 64, NY = 32, NZ = 24, T = 4, GStencil/s = 0.105817
+Correct!	blocking_parallel_rectangle_vectime_extra_array, NX = 64, NY = 32, NZ = 24, T = 4, GStencil/s = 0.186890
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512, NX = 64, NY = 32, NZ = 24, T = 4, GStencil/s = 0.183061
+
+------------------------------------------------------------------------------------------------
+CASE args=(4, 4, 4, 4, 4, 4, 4, 1) OMP_NUM_THREADS=4
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-27p-blocking/exe-3d-jacobi-27p-blocking 4 4 4 4 4 4 4 1
+Status: PASS
+Return code: 0
+Result lines: 5 / 5
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_vec, NX = 4, NY = 4, NZ = 4, T = 4, GStencil/s = 0.023273
+Correct!	blocking_parallel_rectangle_scalar, NX = 4, NY = 4, NZ = 4, T = 4, GStencil/s = 0.000555
+Correct!	blocking_parallel_rectangle_vector, NX = 4, NY = 4, NZ = 4, T = 4, GStencil/s = 0.004830
+Correct!	blocking_parallel_rectangle_vectime_extra_array, NX = 4, NY = 4, NZ = 4, T = 4, GStencil/s = 0.036571
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512, NX = 4, NY = 4, NZ = 4, T = 4, GStencil/s = 0.036571
+
+------------------------------------------------------------------------------------------------
+CASE args=(5, 5, 5, 2, 3, 2, 2, 1) OMP_NUM_THREADS=4
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-27p-blocking/exe-3d-jacobi-27p-blocking 5 5 5 2 3 2 2 1
+Status: PASS
+Return code: 0
+Result lines: 5 / 5
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_vec, NX = 5, NY = 5, NZ = 5, T = 2, GStencil/s = 0.031250
+Correct!	blocking_parallel_rectangle_scalar, NX = 5, NY = 5, NZ = 5, T = 2, GStencil/s = 0.000899
+Correct!	blocking_parallel_rectangle_vector, NX = 5, NY = 5, NZ = 5, T = 2, GStencil/s = 0.005319
+Correct!	blocking_parallel_rectangle_vectime_extra_array, NX = 5, NY = 5, NZ = 5, T = 2, GStencil/s = 0.031250
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512, NX = 5, NY = 5, NZ = 5, T = 2, GStencil/s = 0.050000
+
+------------------------------------------------------------------------------------------------
+CASE args=(9, 7, 7, 3, 5, 4, 4, 2) OMP_NUM_THREADS=4
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-27p-blocking/exe-3d-jacobi-27p-blocking 9 7 7 3 5 4 4 2
+Status: PASS
+Return code: 0
+Result lines: 5 / 5
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_vec, NX = 9, NY = 7, NZ = 7, T = 3, GStencil/s = 0.036750
+Correct!	blocking_parallel_rectangle_scalar, NX = 9, NY = 7, NZ = 7, T = 3, GStencil/s = 0.002914
+Correct!	blocking_parallel_rectangle_vector, NX = 9, NY = 7, NZ = 7, T = 3, GStencil/s = 0.014226
+Correct!	blocking_parallel_rectangle_vectime_extra_array, NX = 9, NY = 7, NZ = 7, T = 3, GStencil/s = 0.030767
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512, NX = 9, NY = 7, NZ = 7, T = 3, GStencil/s = 0.033923
+
+------------------------------------------------------------------------------------------------
+CASE args=(10, 9, 10, 2, 12, 8, 8, 1) OMP_NUM_THREADS=4
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-27p-blocking/exe-3d-jacobi-27p-blocking 10 9 10 2 12 8 8 1
+Status: PASS
+Return code: 0
+Result lines: 5 / 5
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_vec, NX = 10, NY = 9, NZ = 10, T = 2, GStencil/s = 0.128571
+Correct!	blocking_parallel_rectangle_scalar, NX = 10, NY = 9, NZ = 10, T = 2, GStencil/s = 0.138462
+Correct!	blocking_parallel_rectangle_vector, NX = 10, NY = 9, NZ = 10, T = 2, GStencil/s = 0.138462
+Correct!	blocking_parallel_rectangle_vectime_extra_array, NX = 10, NY = 9, NZ = 10, T = 2, GStencil/s = 0.112500
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512, NX = 10, NY = 9, NZ = 10, T = 2, GStencil/s = 0.120000
+
+------------------------------------------------------------------------------------------------
+CASE args=(18, 8, 8, 8, 18, 8, 8, 1) OMP_NUM_THREADS=4
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-27p-blocking/exe-3d-jacobi-27p-blocking 18 8 8 8 18 8 8 1
+Status: PASS
+Return code: 0
+Result lines: 5 / 5
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_vec, NX = 18, NY = 8, NZ = 8, T = 8, GStencil/s = 0.153600
+Correct!	blocking_parallel_rectangle_scalar, NX = 18, NY = 8, NZ = 8, T = 8, GStencil/s = 0.025043
+Correct!	blocking_parallel_rectangle_vector, NX = 18, NY = 8, NZ = 8, T = 8, GStencil/s = 0.056889
+Correct!	blocking_parallel_rectangle_vectime_extra_array, NX = 18, NY = 8, NZ = 8, T = 8, GStencil/s = 0.131657
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512, NX = 18, NY = 8, NZ = 8, T = 8, GStencil/s = 0.139636
+
+------------------------------------------------------------------------------------------------
+CASE args=(21, 8, 8, 5, 8, 8, 8, 4) OMP_NUM_THREADS=4
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-27p-blocking/exe-3d-jacobi-27p-blocking 21 8 8 5 8 8 8 4
+Status: PASS
+Return code: 0
+Result lines: 5 / 5
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_vec, NX = 21, NY = 8, NZ = 8, T = 5, GStencil/s = 0.149333
+Correct!	blocking_parallel_rectangle_scalar, NX = 21, NY = 8, NZ = 8, T = 5, GStencil/s = 0.142979
+Correct!	blocking_parallel_rectangle_vector, NX = 21, NY = 8, NZ = 8, T = 5, GStencil/s = 0.142979
+Correct!	blocking_parallel_rectangle_vectime_extra_array, NX = 21, NY = 8, NZ = 8, T = 5, GStencil/s = 0.131765
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512, NX = 21, NY = 8, NZ = 8, T = 5, GStencil/s = 0.131765
+
+------------------------------------------------------------------------------------------------
+CASE args=(23, 9, 10, 2, 20, 8, 8, 2) OMP_NUM_THREADS=4
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-27p-blocking/exe-3d-jacobi-27p-blocking 23 9 10 2 20 8 8 2
+Status: PASS
+Return code: 0
+Result lines: 5 / 5
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_vec, NX = 23, NY = 9, NZ = 10, T = 2, GStencil/s = 0.133548
+Correct!	blocking_parallel_rectangle_scalar, NX = 23, NY = 9, NZ = 10, T = 2, GStencil/s = 0.012141
+Correct!	blocking_parallel_rectangle_vector, NX = 23, NY = 9, NZ = 10, T = 2, GStencil/s = 0.056712
+Correct!	blocking_parallel_rectangle_vectime_extra_array, NX = 23, NY = 9, NZ = 10, T = 2, GStencil/s = 0.125455
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512, NX = 23, NY = 9, NZ = 10, T = 2, GStencil/s = 0.125455
+
+------------------------------------------------------------------------------------------------
+CASE args=(29, 10, 11, 8, 18, 8, 8, 1) OMP_NUM_THREADS=4
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-27p-blocking/exe-3d-jacobi-27p-blocking 29 10 11 8 18 8 8 1
+Status: PASS
+Return code: 0
+Result lines: 5 / 5
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_vec, NX = 29, NY = 10, NZ = 11, T = 8, GStencil/s = 0.120948
+Correct!	blocking_parallel_rectangle_scalar, NX = 29, NY = 10, NZ = 11, T = 8, GStencil/s = 0.046148
+Correct!	blocking_parallel_rectangle_vector, NX = 29, NY = 10, NZ = 11, T = 8, GStencil/s = 0.079502
+Correct!	blocking_parallel_rectangle_vectime_extra_array, NX = 29, NY = 10, NZ = 11, T = 8, GStencil/s = 0.124488
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512, NX = 29, NY = 10, NZ = 11, T = 8, GStencil/s = 0.124488
+
+------------------------------------------------------------------------------------------------
+CASE args=(30, 16, 17, 2, 20, 8, 8, 4) OMP_NUM_THREADS=4
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-27p-blocking/exe-3d-jacobi-27p-blocking 30 16 17 2 20 8 8 4
+Status: PASS
+Return code: 0
+Result lines: 5 / 5
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_vec, NX = 30, NY = 16, NZ = 17, T = 2, GStencil/s = 0.166531
+Correct!	blocking_parallel_rectangle_scalar, NX = 30, NY = 16, NZ = 17, T = 2, GStencil/s = 0.030391
+Correct!	blocking_parallel_rectangle_vector, NX = 30, NY = 16, NZ = 17, T = 2, GStencil/s = 0.066073
+Correct!	blocking_parallel_rectangle_vectime_extra_array, NX = 30, NY = 16, NZ = 17, T = 2, GStencil/s = 0.088216
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512, NX = 30, NY = 16, NZ = 17, T = 2, GStencil/s = 0.161584
+
+------------------------------------------------------------------------------------------------
+CASE args=(37, 13, 15, 3, 20, 8, 8, 2) OMP_NUM_THREADS=4
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-27p-blocking/exe-3d-jacobi-27p-blocking 37 13 15 3 20 8 8 2
+Status: PASS
+Return code: 0
+Result lines: 5 / 5
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_vec, NX = 37, NY = 13, NZ = 15, T = 3, GStencil/s = 0.150312
+Correct!	blocking_parallel_rectangle_scalar, NX = 37, NY = 13, NZ = 15, T = 3, GStencil/s = 0.046151
+Correct!	blocking_parallel_rectangle_vector, NX = 37, NY = 13, NZ = 15, T = 3, GStencil/s = 0.063475
+Correct!	blocking_parallel_rectangle_vectime_extra_array, NX = 37, NY = 13, NZ = 15, T = 3, GStencil/s = 0.147245
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512, NX = 37, NY = 13, NZ = 15, T = 3, GStencil/s = 0.148253
+
+------------------------------------------------------------------------------------------------
+CASE args=(41, 17, 19, 4, 21, 9, 10, 2) OMP_NUM_THREADS=4
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-27p-blocking/exe-3d-jacobi-27p-blocking 41 17 19 4 21 9 10 2
+Status: PASS
+Return code: 0
+Result lines: 5 / 5
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_vec, NX = 41, NY = 17, NZ = 19, T = 4, GStencil/s = 0.119846
+Correct!	blocking_parallel_rectangle_scalar, NX = 41, NY = 17, NZ = 19, T = 4, GStencil/s = 0.083552
+Correct!	blocking_parallel_rectangle_vector, NX = 41, NY = 17, NZ = 19, T = 4, GStencil/s = 0.124347
+Correct!	blocking_parallel_rectangle_vectime_extra_array, NX = 41, NY = 17, NZ = 19, T = 4, GStencil/s = 0.158125
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512, NX = 41, NY = 17, NZ = 19, T = 4, GStencil/s = 0.161994
+
+------------------------------------------------------------------------------------------------
+CASE args=(45, 18, 25, 4, 23, 11, 13, 3) OMP_NUM_THREADS=4
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-27p-blocking/exe-3d-jacobi-27p-blocking 45 18 25 4 23 11 13 3
+Status: PASS
+Return code: 0
+Result lines: 5 / 5
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_vec, NX = 45, NY = 18, NZ = 25, T = 4, GStencil/s = 0.162978
+Correct!	blocking_parallel_rectangle_scalar, NX = 45, NY = 18, NZ = 25, T = 4, GStencil/s = 0.063629
+Correct!	blocking_parallel_rectangle_vector, NX = 45, NY = 18, NZ = 25, T = 4, GStencil/s = 0.131068
+Correct!	blocking_parallel_rectangle_vectime_extra_array, NX = 45, NY = 18, NZ = 25, T = 4, GStencil/s = 0.178808
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512, NX = 45, NY = 18, NZ = 25, T = 4, GStencil/s = 0.179601
+
+------------------------------------------------------------------------------------------------
+CASE args=(64, 32, 24, 4, 24, 12, 10, 2) OMP_NUM_THREADS=4
+Command: /data/users/zhuhl/TemporalStencil/3d-jacobi-27p-blocking/exe-3d-jacobi-27p-blocking 64 32 24 4 24 12 10 2
+Status: PASS
+Return code: 0
+Result lines: 5 / 5
+Mismatch coordinate lines: 0
+stdout:
+Correct!	naive_vec, NX = 64, NY = 32, NZ = 24, T = 4, GStencil/s = 0.192942
+Correct!	blocking_parallel_rectangle_scalar, NX = 64, NY = 32, NZ = 24, T = 4, GStencil/s = 0.071494
+Correct!	blocking_parallel_rectangle_vector, NX = 64, NY = 32, NZ = 24, T = 4, GStencil/s = 0.139537
+Correct!	blocking_parallel_rectangle_vectime_extra_array, NX = 64, NY = 32, NZ = 24, T = 4, GStencil/s = 0.193512
+Correct!	blocking_parallel_rectangle_vectime_extra_array_512, NX = 64, NY = 32, NZ = 24, T = 4, GStencil/s = 0.194854
+
+================================================================================================
+Summary
+3d-jacobi-7p: 12/12 passed
+3d-jacobi-27p: 12/12 passed
+3d-jacobi-7p-blocking: 26/26 passed
+3d-jacobi-27p-blocking: 26/26 passed
+Total: 76/76 passed

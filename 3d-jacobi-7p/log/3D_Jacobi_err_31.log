@@ -1,0 +1,1 @@
+test.sh: line 1: 290484 Killed                  ./exe-3d-jacobi-7p 2560 2560 2560 3600
