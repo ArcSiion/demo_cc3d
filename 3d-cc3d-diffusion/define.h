@@ -77,21 +77,28 @@ typedef unsigned char cc3d_cell_type_t;
 	} while (0)
 
 #define Compute_scalar_permeability(A, CELL_TYPE, DIFF_COEF, DECAY_COEF, PERM_COEF, t, x, y, z) \
-	do { \
-		int _cc3d_t = (t) % 2; \
-		cc3d_cell_type_t _cc3d_center_type = (CELL_TYPE)[x][y][z]; \
-		float _cc3d_center = (A)[_cc3d_t][x][y][z]; \
-		float _cc3d_flux = \
-			(PERM_COEF)[(CELL_TYPE)[(x) - 1][y][z]] * ((A)[_cc3d_t][(x) - 1][y][z] - _cc3d_center) + \
-			(PERM_COEF)[(CELL_TYPE)[(x) + 1][y][z]] * ((A)[_cc3d_t][(x) + 1][y][z] - _cc3d_center) + \
-			(PERM_COEF)[(CELL_TYPE)[x][(y) - 1][z]] * ((A)[_cc3d_t][x][(y) - 1][z] - _cc3d_center) + \
-			(PERM_COEF)[(CELL_TYPE)[x][(y) + 1][z]] * ((A)[_cc3d_t][x][(y) + 1][z] - _cc3d_center) + \
-			(PERM_COEF)[(CELL_TYPE)[x][y][(z) - 1]] * ((A)[_cc3d_t][x][y][(z) - 1] - _cc3d_center) + \
-			(PERM_COEF)[(CELL_TYPE)[x][y][(z) + 1]] * ((A)[_cc3d_t][x][y][(z) + 1] - _cc3d_center); \
-		(A)[((t) + 1) % 2][x][y][z] = \
-			(1.0f - (DECAY_COEF)[_cc3d_center_type]) * _cc3d_center + \
-			(DIFF_COEF)[_cc3d_center_type] * _cc3d_flux; \
-	} while (0)
+    do { \
+        int _cc3d_t = (t) % 2; \
+        cc3d_cell_type_t _cc3d_center_type = (CELL_TYPE)[x][y][z]; \
+        float _cc3d_center = (A)[_cc3d_t][x][y][z]; \
+        float _cc3d_perm_center = (PERM_COEF)[_cc3d_center_type]; \
+        float _cc3d_flux = \
+            (_cc3d_perm_center * (PERM_COEF)[(CELL_TYPE)[(x) - 1][y][z]]) * \
+                ((A)[_cc3d_t][(x) - 1][y][z] - _cc3d_center) + \
+            (_cc3d_perm_center * (PERM_COEF)[(CELL_TYPE)[(x) + 1][y][z]]) * \
+                ((A)[_cc3d_t][(x) + 1][y][z] - _cc3d_center) + \
+            (_cc3d_perm_center * (PERM_COEF)[(CELL_TYPE)[x][(y) - 1][z]]) * \
+                ((A)[_cc3d_t][x][(y) - 1][z] - _cc3d_center) + \
+            (_cc3d_perm_center * (PERM_COEF)[(CELL_TYPE)[x][(y) + 1][z]]) * \
+                ((A)[_cc3d_t][x][(y) + 1][z] - _cc3d_center) + \
+            (_cc3d_perm_center * (PERM_COEF)[(CELL_TYPE)[x][y][(z) - 1]]) * \
+                ((A)[_cc3d_t][x][y][(z) - 1] - _cc3d_center) + \
+            (_cc3d_perm_center * (PERM_COEF)[(CELL_TYPE)[x][y][(z) + 1]]) * \
+                ((A)[_cc3d_t][x][y][(z) + 1] - _cc3d_center); \
+        (A)[((t) + 1) % 2][x][y][z] = \
+            (1.0f - (DECAY_COEF)[_cc3d_center_type]) * _cc3d_center + \
+            (DIFF_COEF)[_cc3d_center_type] * _cc3d_flux; \
+    } while (0)
 
 void naive_scalar(float *A, int NX, int NY, int NZ, int T);
 void naive_scalar_cell_type(float *A, cc3d_cell_type_t *cellType, const float *diffCoef, const float *decayCoef,
