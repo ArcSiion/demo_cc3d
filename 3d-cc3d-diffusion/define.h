@@ -100,6 +100,50 @@ typedef unsigned char cc3d_cell_type_t;
             (DIFF_COEF)[_cc3d_center_type] * _cc3d_flux; \
     } while (0)
 
+//=====================naive_scalar_edge_variable.c
+
+#define Compute_scalar_edge_variable(A, CELL_TYPE, DIFF_COEF, DECAY_COEF, PERM_COEF, t, x, y, z) \
+    do { \
+        int _cc3d_t = (t) % 2; \
+        cc3d_cell_type_t _type_c = (CELL_TYPE)[x][y][z]; \
+        float _center = (A)[_cc3d_t][x][y][z]; \
+        float _diff_c = (DIFF_COEF)[_type_c]; \
+        float _decay_c = (DECAY_COEF)[_type_c]; \
+        float _perm_c = (PERM_COEF)[_type_c]; \
+        \
+        cc3d_cell_type_t _type_l = (CELL_TYPE)[(x) - 1][y][z]; \
+        cc3d_cell_type_t _type_r = (CELL_TYPE)[(x) + 1][y][z]; \
+        cc3d_cell_type_t _type_d = (CELL_TYPE)[x][(y) - 1][z]; \
+        cc3d_cell_type_t _type_u = (CELL_TYPE)[x][(y) + 1][z]; \
+        cc3d_cell_type_t _type_b = (CELL_TYPE)[x][y][(z) - 1]; \
+        cc3d_cell_type_t _type_f = (CELL_TYPE)[x][y][(z) + 1]; \
+        \
+        float _left  = (A)[_cc3d_t][(x) - 1][y][z]; \
+        float _right = (A)[_cc3d_t][(x) + 1][y][z]; \
+        float _down  = (A)[_cc3d_t][x][(y) - 1][z]; \
+        float _up    = (A)[_cc3d_t][x][(y) + 1][z]; \
+        float _back  = (A)[_cc3d_t][x][y][(z) - 1]; \
+        float _front = (A)[_cc3d_t][x][y][(z) + 1]; \
+        \
+        float _w_l = _perm_c * (PERM_COEF)[_type_l] * 0.5f * (_diff_c + (DIFF_COEF)[_type_l]); \
+        float _w_r = _perm_c * (PERM_COEF)[_type_r] * 0.5f * (_diff_c + (DIFF_COEF)[_type_r]); \
+        float _w_d = _perm_c * (PERM_COEF)[_type_d] * 0.5f * (_diff_c + (DIFF_COEF)[_type_d]); \
+        float _w_u = _perm_c * (PERM_COEF)[_type_u] * 0.5f * (_diff_c + (DIFF_COEF)[_type_u]); \
+        float _w_b = _perm_c * (PERM_COEF)[_type_b] * 0.5f * (_diff_c + (DIFF_COEF)[_type_b]); \
+        float _w_f = _perm_c * (PERM_COEF)[_type_f] * 0.5f * (_diff_c + (DIFF_COEF)[_type_f]); \
+        \
+        float _flux = \
+            _w_l * (_left  - _center) + \
+            _w_r * (_right - _center) + \
+            _w_d * (_down  - _center) + \
+            _w_u * (_up    - _center) + \
+            _w_b * (_back  - _center) + \
+            _w_f * (_front - _center); \
+        \
+        (A)[((t) + 1) % 2][x][y][z] = \
+            (1.0f - _decay_c) * _center + _flux; \
+    } while (0)	
+
 void naive_scalar(float *A, int NX, int NY, int NZ, int T);
 void naive_scalar_cell_type(float *A, cc3d_cell_type_t *cellType, const float *diffCoef, const float *decayCoef,
 							int NX, int NY, int NZ, int T);
@@ -112,3 +156,10 @@ void init_cc3d_permeability(float *permeabilityCoef);
 void init_cell_type_field(int NX, int NY, int NZ,
 						  cc3d_cell_type_t (*cellType)[NY + 2 * YSTART][NZ + 2 * ZSTART],
 						  long typeCounts[CC3D_TRACKED_CELL_TYPES]);
+
+void naive_scalar_edge_variable(float *A,
+                                cc3d_cell_type_t *cellType,
+                                const float *diffCoef,
+                                const float *decayCoef,
+                                const float *permeabilityCoef,
+                                int NX, int NY, int NZ, int T);						  

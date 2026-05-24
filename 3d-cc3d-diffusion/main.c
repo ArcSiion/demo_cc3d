@@ -106,7 +106,7 @@ int main(int argc, char *argv[]) {
 	run_and_report(naive_scalar, A);
 	run_and_report_cell_type(naive_scalar_cell_type, A, cellType, diffCoef, decayCoef);
 	run_and_report_permeability(naive_scalar_permeability, A, cellType, diffCoef, decayCoef, permeabilityCoef);
-
+	run_and_report_permeability(naive_scalar_edge_variable, A, cellType, diffCoef, decayCoef, permeabilityCoef);
 	free(A);
 	free(A_backup);
 	free(cellType);
